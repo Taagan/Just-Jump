@@ -4,43 +4,56 @@ using UnityEngine;
 
 public class MovementPlayer : MonoBehaviour {
 
-    public GameObject playerBlue, playerYellow, playerGreen;
+    public GameObject playerTop, playerMiddle, playerBottom;
     public float speed;
     public float jumpForce;
-    Rigidbody2D rbGreen, rbYellow, rbBlue, rbGameMaster;
+    Rigidbody2D rbBottom, rbMiddle, rbTop, rbGameMaster;
+    public enum Mode { normal,boostMode}
+    Mode currentMode;
+    public bool BoostMode = false;
     // Use this for initialization
     void Start()
     {
-        rbGreen = playerGreen.GetComponent<Rigidbody2D>();
-        rbYellow = playerYellow.GetComponent<Rigidbody2D>();
-        rbBlue = playerBlue.GetComponent<Rigidbody2D>();
+        rbBottom = playerBottom.GetComponent<Rigidbody2D>();
+        rbMiddle = playerMiddle.GetComponent<Rigidbody2D>();
+        rbTop = playerTop.GetComponent<Rigidbody2D>();
         rbGameMaster = GetComponent<Rigidbody2D>();
+        //Make this cleaner
+        currentMode = Mode.normal;
+        if (BoostMode == true)
+        {
+            currentMode = Mode.boostMode;
+
+        }
     }
 
     // Update is called once per frame
     void Update()
     {
-
-
-        if (Input.GetKeyDown(KeyCode.D))
+        if (playerTop.transform.position.x != playerBottom.transform.position.x)
         {
-            Jump(rbBlue);
-            Jump(rbYellow);
-            Jump(rbGreen);
+            playerTop.transform.position = new Vector3(playerBottom.transform.position.x,playerTop.transform.position.y, playerTop.transform.position.z);
         }
-        if (Input.GetKeyDown(KeyCode.S))
+        if (playerMiddle.transform.position.x != playerBottom.transform.position.x)
         {
-            Jump(rbBlue);
-            Jump(rbYellow);
-        }
-        if (Input.GetKeyDown(KeyCode.A))
-        {
-            Jump(rbBlue);
+            playerMiddle.transform.position = new Vector3(playerBottom.transform.position.x, playerMiddle.transform.position.y, playerMiddle.transform.position.z);
         }
 
-        rbYellow.velocity = new Vector2(speed, rbYellow.velocity.y);
-        rbGreen.velocity = new Vector2(speed, rbGreen.velocity.y);
-        rbBlue.velocity = new Vector2(speed, rbBlue.velocity.y);
+        if (currentMode == Mode.boostMode)
+        {
+            BoostedJump();
+        }
+        else
+        {
+            NormalJump();
+        }
+
+
+
+
+        rbTop.velocity = new Vector2(speed, rbTop.velocity.y);
+        rbMiddle.velocity = new Vector2(speed, rbMiddle.velocity.y);
+        rbBottom.velocity = new Vector2(speed, rbBottom.velocity.y);
 
         rbGameMaster.velocity = new Vector2(speed, 0);
     }
@@ -48,5 +61,75 @@ public class MovementPlayer : MonoBehaviour {
     private void Jump(Rigidbody2D rb)
     {
         rb.velocity = new Vector2(speed, jumpForce);
+    }
+
+
+    private void BoostedJump()
+    {
+        if (Input.GetKeyDown(KeyCode.D) && playerBottom.GetComponent<BottomPlayerScript>().canJump == true)
+        {
+            if (playerMiddle.GetComponent<MiddlePlayerScript>().canJump == true && playerTop.GetComponent<TopPlayerScript>().canJump == true)
+            {
+                Jump(rbTop);
+                Jump(rbMiddle);
+                Jump(rbBottom);
+                playerBottom.GetComponent<BottomPlayerScript>().canJump = false;
+            }
+            else if (playerMiddle.GetComponent<MiddlePlayerScript>().canJump == true && playerTop.GetComponent<TopPlayerScript>().canJump == false)
+            {
+                Jump(rbMiddle);
+                Jump(rbBottom);
+                playerBottom.GetComponent<BottomPlayerScript>().canJump = false;
+            }
+            else
+            {
+                Jump(rbBottom);
+                playerBottom.GetComponent<BottomPlayerScript>().canJump = false;
+            }
+
+
+        }
+        if (Input.GetKeyDown(KeyCode.S) && playerMiddle.GetComponent<MiddlePlayerScript>().canJump == true)
+        {
+            if (playerTop.GetComponent<TopPlayerScript>().canJump == true)
+            {
+                Jump(rbTop);
+                Jump(rbMiddle);
+                playerMiddle.GetComponent<MiddlePlayerScript>().canJump = false;
+            }
+            else
+            {
+                Jump(rbMiddle);
+                playerMiddle.GetComponent<MiddlePlayerScript>().canJump = false;
+            }
+
+        }
+        if (Input.GetKeyDown(KeyCode.A) && playerTop.GetComponent<TopPlayerScript>().canJump == true)
+        {
+            Jump(rbTop);
+            playerTop.GetComponent<TopPlayerScript>().canJump = false;
+        }
+    }
+
+    private void NormalJump()
+    {
+        if (Input.GetKeyDown(KeyCode.D) && playerBottom.GetComponent<BottomPlayerScript>().canJump == true)
+        {
+            Jump(rbTop);
+            Jump(rbMiddle);
+            Jump(rbBottom);
+            playerBottom.GetComponent<BottomPlayerScript>().canJump = false;
+        }
+        if (Input.GetKeyDown(KeyCode.S) && playerMiddle.GetComponent<MiddlePlayerScript>().canJump == true)
+        {
+            Jump(rbTop);
+            Jump(rbMiddle);
+            playerMiddle.GetComponent<MiddlePlayerScript>().canJump = false;
+        }
+        if (Input.GetKeyDown(KeyCode.A) && playerTop.GetComponent<TopPlayerScript>().canJump == true)
+        {
+            Jump(rbTop);
+            playerTop.GetComponent<TopPlayerScript>().canJump = false;
+        }
     }
 }
