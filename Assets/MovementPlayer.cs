@@ -5,6 +5,7 @@ using UnityEngine;
 public class MovementPlayer : MonoBehaviour {
 
     public GameObject playerTop, playerMiddle, playerBottom;
+
     public float speed;
     public float jumpForce;
     Rigidbody2D rbBottom, rbMiddle, rbTop, rbGameMaster;
@@ -14,6 +15,8 @@ public class MovementPlayer : MonoBehaviour {
     // Use this for initialization
     void Start()
     {
+
+
         rbBottom = playerBottom.GetComponent<Rigidbody2D>();
         rbMiddle = playerMiddle.GetComponent<Rigidbody2D>();
         rbTop = playerTop.GetComponent<Rigidbody2D>();
