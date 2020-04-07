@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class TopPlayerScript : MonoBehaviour
 {
-
     public bool canJump;
+    public bool connectedToCubeBelow;
     // Start is called before the first frame update
     void Start()
     {
@@ -15,11 +15,20 @@ public class TopPlayerScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
         canJump = true;
+        if (collision.gameObject.tag == "MiddlePlayer")
+        {
+            connectedToCubeBelow = true;
+            GetComponent<MiddlePlayerScript>().connectedToCubeBelow = true;
+        }
+        else
+        {
+            connectedToCubeBelow = false;
+        }
     }
 }

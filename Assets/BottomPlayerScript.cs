@@ -5,6 +5,7 @@ using UnityEngine;
 public class BottomPlayerScript : MonoBehaviour
 {
     public bool canJump;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -14,10 +15,14 @@ public class BottomPlayerScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        canJump = true;
+        if (collision.gameObject.tag == "Ground")
+        {
+            canJump = true;
+        }
+
     }
 }

@@ -200,7 +200,7 @@ GameObject:
   - component: {fileID: 130306598}
   m_Layer: 0
   m_Name: Hitbox
-  m_TagString: Player
+  m_TagString: TopPlayer
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -271,7 +271,7 @@ GameObject:
   - component: {fileID: 182655884}
   m_Layer: 0
   m_Name: Player Object Middle
-  m_TagString: Player
+  m_TagString: MiddlePlayer
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -352,6 +352,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canJump: 0
+  connectedToCubeBelow: 0
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -546,7 +547,7 @@ GameObject:
   - component: {fileID: 576511295}
   m_Layer: 0
   m_Name: Player Object Bottom
-  m_TagString: Player
+  m_TagString: BottomPlayer
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -915,7 +916,7 @@ GameObject:
   - component: {fileID: 1255017980}
   m_Layer: 0
   m_Name: Hitbox
-  m_TagString: Player
+  m_TagString: MiddlePlayer
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1143,7 +1144,7 @@ GameObject:
   - component: {fileID: 1385217128}
   m_Layer: 0
   m_Name: Hitbox
-  m_TagString: Player
+  m_TagString: BottomPlayer
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1248,7 +1249,7 @@ GameObject:
   - component: {fileID: 1670542946}
   m_Layer: 0
   m_Name: New Sprite
-  m_TagString: Player
+  m_TagString: TopPlayer
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1526,6 +1527,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canJump: 1
+  connectedToCubeBelow: 0
 --- !u!1 &1938612462
 GameObject:
   m_ObjectHideFlags: 0
@@ -1542,7 +1544,7 @@ GameObject:
   - component: {fileID: 1938612467}
   m_Layer: 0
   m_Name: ground
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4492,7 +4494,7 @@ GameObject:
   - component: {fileID: 1991605921}
   m_Layer: 0
   m_Name: New Sprite
-  m_TagString: Player
+  m_TagString: BottomPlayer
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4586,7 +4588,7 @@ GameObject:
   - component: {fileID: 2055145947}
   m_Layer: 0
   m_Name: New Sprite
-  m_TagString: Player
+  m_TagString: MiddlePlayer
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
