@@ -73,14 +73,14 @@ public class MovementPlayer : MonoBehaviour
             if (playerMiddle.GetComponent<MiddlePlayerScript>().canJump == true && playerTop.GetComponent<TopPlayerScript>().canJump == true)
             {
                 ////För att göra så att de övre kuberna kan hoppa separat när de inte är connectade till kuben under. Funkar men blir problematiskt att klara av banan
-                //if (playerTop.GetComponent<TopPlayerScript>().connectedToCubeBelow == true && playerMiddle.GetComponent<MiddlePlayerScript>().connectedToCubeBelow == true)  
-                //{
-                Jump(rbTop);
-                //}
-                //if (playerMiddle.GetComponent<MiddlePlayerScript>().connectedToCubeBelow == true)
-                //{
-                Jump(rbMiddle);
-                //}
+                if (playerTop.GetComponent<TopPlayerScript>().connectedToCubeBelow == true && playerMiddle.GetComponent<MiddlePlayerScript>().connectedToCubeBelow == true)
+                {
+                    Jump(rbTop);
+                }
+                if (playerMiddle.GetComponent<MiddlePlayerScript>().connectedToCubeBelow == true)
+                {
+                    Jump(rbMiddle);
+                }
                 Jump(rbBottom);
                 playerBottom.GetComponent<BottomPlayerScript>().canJump = false;
             }
@@ -105,13 +105,13 @@ public class MovementPlayer : MonoBehaviour
                 Jump(rbTop);
                 Jump(rbMiddle);
                 playerMiddle.GetComponent<MiddlePlayerScript>().canJump = false;
-                //playerMiddle.GetComponent<MiddlePlayerScript>().connectedToCubeBelow = false;
+                playerMiddle.GetComponent<MiddlePlayerScript>().connectedToCubeBelow = false;
             }
             else
             {
                 Jump(rbMiddle);
                 playerMiddle.GetComponent<MiddlePlayerScript>().canJump = false;
-                //playerMiddle.GetComponent<MiddlePlayerScript>().connectedToCubeBelow = false;
+                playerMiddle.GetComponent<MiddlePlayerScript>().connectedToCubeBelow = false;
             }
 
         }
@@ -119,7 +119,7 @@ public class MovementPlayer : MonoBehaviour
         {
             Jump(rbTop);
             playerTop.GetComponent<TopPlayerScript>().canJump = false;
-            //playerTop.GetComponent<TopPlayerScript>().connectedToCubeBelow = false;
+            playerTop.GetComponent<TopPlayerScript>().connectedToCubeBelow = false;
         }
     }
 
