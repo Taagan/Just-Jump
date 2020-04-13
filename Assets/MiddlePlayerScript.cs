@@ -23,9 +23,9 @@ public class MiddlePlayerScript : MonoBehaviour
         {
             canJump = true;
         }
-        //if (collision.gameObject.tag == "BottomPlayer") //Kommer endast användas om man vill att kuberna inte ska hoppa tsm såvida de är connectade;
-        //{
-        //    connectedToCubeBelow = true;
-        //}
+        if (collision.gameObject.tag == "BottomPlayer") //Kommer endast användas om man vill att kuberna inte ska hoppa tsm såvida de är connectade;
+        {
+            connectedToCubeBelow = true;
+        }
     }
 }

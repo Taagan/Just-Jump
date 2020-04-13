@@ -6,6 +6,7 @@ public class TopPlayerScript : MonoBehaviour
 {
     public bool canJump;
     public bool connectedToCubeBelow;
+    public GameObject middlePlayer;
     // Start is called before the first frame update
     void Start()
     {
@@ -24,7 +25,7 @@ public class TopPlayerScript : MonoBehaviour
         if (collision.gameObject.tag == "MiddlePlayer")
         {
             connectedToCubeBelow = true;
-            GetComponent<MiddlePlayerScript>().connectedToCubeBelow = true;
+            middlePlayer.GetComponent<MiddlePlayerScript>().connectedToCubeBelow = true;
         }
         else
         {

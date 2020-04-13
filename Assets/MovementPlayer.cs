@@ -53,8 +53,8 @@ public class MovementPlayer : MonoBehaviour
         }
 
 
-        //rbTop.velocity = new Vector2(speed, rbTop.velocity.y);                 // <spelet funkar utan dessa pga if satserna ovanför
-        //rbMiddle.velocity = new Vector2(speed, rbMiddle.velocity.y);           // <spelet funkar utan dessa
+        rbTop.velocity = new Vector2(speed, rbTop.velocity.y);                 // <spelet funkar utan dessa pga if satserna ovanför
+        rbMiddle.velocity = new Vector2(speed, rbMiddle.velocity.y);           // <spelet funkar utan dessa
         rbBottom.velocity = new Vector2(speed, rbBottom.velocity.y);
 
         rbGameMaster.velocity = new Vector2(speed, 0);
