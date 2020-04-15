@@ -5,7 +5,7 @@ using UnityEngine;
 public class TopPlayerScript : MonoBehaviour
 {
     public bool canJump;
-    public bool connectedToCubeBelow;
+    public bool syncJump;
     public GameObject middlePlayer;
     // Start is called before the first frame update
     void Start()
@@ -24,12 +24,16 @@ public class TopPlayerScript : MonoBehaviour
         canJump = true;
         if (collision.gameObject.tag == "MiddlePlayer")
         {
-            connectedToCubeBelow = true;
-            middlePlayer.GetComponent<MiddlePlayerScript>().connectedToCubeBelow = true;
+            syncJump = true;
+            middlePlayer.GetComponent<MiddlePlayerScript>().syncJump = true;
         }
         else
         {
-            connectedToCubeBelow = false;
+            syncJump = false;
         }
+    }
+    private void OnCollisionExit2D(Collision2D collision)
+    {
+        syncJump = true;
     }
 }
