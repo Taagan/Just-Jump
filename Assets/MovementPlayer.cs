@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class MovementPlayer : MonoBehaviour
 {
+    
 
     public GameObject playerTop, playerMiddle, playerBottom;
 
@@ -58,6 +59,12 @@ public class MovementPlayer : MonoBehaviour
         rbBottom.velocity = new Vector2(speed, rbBottom.velocity.y);
 
         rbGameMaster.velocity = new Vector2(speed, 0);
+
+        //Debug 
+        Debug.Log("Connected A:" +playerTop.GetComponent<TopPlayerScript>().connectedToCubeBelow  +"S:"+
+            playerMiddle.GetComponent<MiddlePlayerScript>().connectedToCubeBelow + "\n Can Jump" + 
+           "A:"+ playerMiddle.GetComponent<MiddlePlayerScript>().canJump + " S:"+
+           playerTop.GetComponent<TopPlayerScript>().canJump);
     }
 
     private void Jump(Rigidbody2D rb)

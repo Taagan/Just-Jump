@@ -15,17 +15,18 @@ public class MiddlePlayerScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.tag == "BottomPlayer" || collision.gameObject.tag == "Ground")
-        {
-            canJump = true;
-        }
-        if (collision.gameObject.tag == "BottomPlayer") //Kommer endast användas om man vill att kuberna inte ska hoppa tsm såvida de är connectade;
+        if (collision.gameObject.tag == "BottomPlayer")
         {
             connectedToCubeBelow = true;
+            canJump = true;
+        }
+        if (collision.gameObject.tag == "Ground") //Kommer endast användas om man vill att kuberna inte ska hoppa tsm såvida de är connectade;
+        {
+            canJump = true;
+            connectedToCubeBelow = false;
         }
     }
 }
