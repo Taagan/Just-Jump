@@ -9,6 +9,7 @@ TagManager:
   - BottomPlayer
   - MiddlePlayer
   - TopPlayer
+  - BonusPoint
   layers:
   - Default
   - TransparentFX

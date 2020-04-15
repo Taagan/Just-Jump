@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.Audio;
+using System;
 
 public class HitboxPlayer : MonoBehaviour
 {
@@ -17,10 +19,16 @@ public class HitboxPlayer : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.tag!="Player" && collision.gameObject.tag != "SafeBlock")
+        if (collision.gameObject.tag == "BonusPoint")
+        {
+            collision.gameObject.GetComponent<SoundEffectCode>().PlaySoundEffect();
+
+        }
+        else if (collision.gameObject.tag!="Player" && collision.gameObject.tag != "SafeBlock" /*&& collision.gameObject.tag !="BonusPoint"*/)
         {
             SceneManager.LoadScene(0);
 
         }
+
     }
 }
