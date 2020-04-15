@@ -17,7 +17,7 @@ public class HitboxPlayer : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.tag != "BottomPlayer" && collision.gameObject.tag != "MiddlePlayer" && collision.gameObject.tag != "TopPlayer"&& collision.gameObject.tag != "SafeBlock")
+        if (collision.gameObject.tag!="Player" && collision.gameObject.tag != "SafeBlock")
         {
             SceneManager.LoadScene(0);
 
