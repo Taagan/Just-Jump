@@ -26,7 +26,7 @@ public class SoundEffectCode : MonoBehaviour
     public void PlaySoundEffect()
     {
         aS.PlayOneShot(aC, volume);
-        gameObject.renderer.enabled = false;
+        gameObject.GetComponent<SpriteRenderer>().enabled = false;
         //scoreManager.collectedBonuses += 1;
         Destroy(this.gameObject, 2f);
     }
