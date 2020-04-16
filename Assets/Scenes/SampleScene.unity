@@ -1533,7 +1533,8 @@ MonoBehaviour:
   totalSecondsInSong: 0
   xSpeed: 0
   distanceToTravel: 0
-  testObject: {fileID: 629630972}
+  endOfLevelMarker: {fileID: 629630972}
+  inLevelSelect: 0
 --- !u!1 &956081105
 GameObject:
   m_ObjectHideFlags: 0
