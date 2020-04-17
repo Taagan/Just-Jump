@@ -24,7 +24,7 @@ public class HitboxPlayer : MonoBehaviour
             collision.gameObject.GetComponent<SoundEffectCode>().PlaySoundEffect();
 
         }
-        else if (collision.gameObject.tag!="Player" && collision.gameObject.tag != "SafeBlock" /*&& collision.gameObject.tag !="BonusPoint"*/)
+        else if (collision.gameObject.tag != "TopPlayer" && collision.gameObject.tag != "MiddlePlayer" && collision.gameObject.tag != "BottomPlayer" && collision.gameObject.tag!="Player" && collision.gameObject.tag != "SafeBlock" /*&& collision.gameObject.tag !="BonusPoint"*/)
         {
             SceneManager.LoadScene(0);
 

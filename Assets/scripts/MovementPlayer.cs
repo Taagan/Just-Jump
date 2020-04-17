@@ -127,6 +127,7 @@ public class MovementPlayer : MonoBehaviour
             Jump(rbTop);
             playerTop.GetComponent<TopPlayerScript>().canJump = false;
             playerTop.GetComponent<TopPlayerScript>().syncJump = false;
+            playerTop.GetComponent<TopPlayerScript>().Animation();
         }
     }
 
