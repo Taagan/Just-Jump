@@ -8,7 +8,7 @@ public class GUIscript : MonoBehaviour
    public GameObject guiParentObject;
    static AudioSource audioSource;
 
-    bool menuIsOpen;
+   public static bool menuIsOpen;
     //float savedSpeed = MovementPlayer.thisInstance.speed;
     // Start is called before the first frame update
     void Start()
@@ -29,8 +29,7 @@ public class GUIscript : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            PauseOrUnpause();
-            
+            PauseOrUnpause();            
         }
 
 
