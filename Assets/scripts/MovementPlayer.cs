@@ -2,14 +2,16 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MovementPlayer : MonoBehaviour {
+public class MovementPlayer : MonoBehaviour
+{
+    
 
     public GameObject playerTop, playerMiddle, playerBottom;
 
     public float speed;
     public float jumpForce;
     Rigidbody2D rbBottom, rbMiddle, rbTop, rbGameMaster;
-    public enum Mode { normal,boostMode}
+    public enum Mode { normal, boostMode }
     Mode currentMode;
     public bool BoostMode = false;
     // Use this for initialization
@@ -35,7 +37,7 @@ public class MovementPlayer : MonoBehaviour {
     {
         if (playerTop.transform.position.x != playerBottom.transform.position.x)
         {
-            playerTop.transform.position = new Vector3(playerBottom.transform.position.x,playerTop.transform.position.y, playerTop.transform.position.z);
+            playerTop.transform.position = new Vector3(playerBottom.transform.position.x, playerTop.transform.position.y, playerTop.transform.position.z);
         }
         if (playerMiddle.transform.position.x != playerBottom.transform.position.x)
         {
@@ -52,18 +54,22 @@ public class MovementPlayer : MonoBehaviour {
         }
 
 
-
-
-        rbTop.velocity = new Vector2(speed, rbTop.velocity.y);
-        rbMiddle.velocity = new Vector2(speed, rbMiddle.velocity.y);
+        rbTop.velocity = new Vector2(speed, rbTop.velocity.y);                 // <spelet funkar utan dessa pga if satserna ovanför
+        rbMiddle.velocity = new Vector2(speed, rbMiddle.velocity.y);           // <spelet funkar utan dessa
         rbBottom.velocity = new Vector2(speed, rbBottom.velocity.y);
 
         rbGameMaster.velocity = new Vector2(speed, 0);
+
+        //Debug 
+        //Debug.Log("Connected A:" +playerTop.GetComponent<TopPlayerScript>().syncJump  +"S:"+
+        //    playerMiddle.GetComponent<MiddlePlayerScript>().syncJump + "\n Can Jump" + 
+        //   "A:"+ playerMiddle.GetComponent<MiddlePlayerScript>().canJump + " S:"+
+        //   playerTop.GetComponent<TopPlayerScript>().canJump);
     }
 
     private void Jump(Rigidbody2D rb)
     {
-        rb.velocity = new Vector2(speed, jumpForce);
+        rb.velocity = new Vector2(speed, jumpForce);    //kan lägga 0 istället för speed, samma sak händer
     }
 
 
@@ -73,8 +79,15 @@ public class MovementPlayer : MonoBehaviour {
         {
             if (playerMiddle.GetComponent<MiddlePlayerScript>().canJump == true && playerTop.GetComponent<TopPlayerScript>().canJump == true)
             {
-                Jump(rbTop);
-                Jump(rbMiddle);
+                ////För att göra så att de övre kuberna kan hoppa separat när de inte är connectade till kuben under. Funkar men blir problematiskt att klara av banan
+                if (playerTop.GetComponent<TopPlayerScript>().syncJump == true && playerMiddle.GetComponent<MiddlePlayerScript>().syncJump == true)
+                {
+                    Jump(rbTop);
+                }
+                if (playerMiddle.GetComponent<MiddlePlayerScript>().syncJump == true)
+                {
+                    Jump(rbMiddle);
+                }
                 Jump(rbBottom);
                 playerBottom.GetComponent<BottomPlayerScript>().canJump = false;
             }
@@ -99,11 +112,13 @@ public class MovementPlayer : MonoBehaviour {
                 Jump(rbTop);
                 Jump(rbMiddle);
                 playerMiddle.GetComponent<MiddlePlayerScript>().canJump = false;
+                playerMiddle.GetComponent<MiddlePlayerScript>().syncJump = false;
             }
             else
             {
                 Jump(rbMiddle);
                 playerMiddle.GetComponent<MiddlePlayerScript>().canJump = false;
+                playerMiddle.GetComponent<MiddlePlayerScript>().syncJump = false;
             }
 
         }
@@ -111,6 +126,7 @@ public class MovementPlayer : MonoBehaviour {
         {
             Jump(rbTop);
             playerTop.GetComponent<TopPlayerScript>().canJump = false;
+            playerTop.GetComponent<TopPlayerScript>().syncJump = false;
         }
     }
 

@@ -18,6 +18,9 @@ public class BottomPlayerScript : MonoBehaviour
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        canJump = true;
+        if (collision.gameObject.tag == "Ground")
+        {
+            canJump = true;
+        }
     }
 }
