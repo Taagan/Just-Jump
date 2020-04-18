@@ -96,11 +96,13 @@ public class MovementPlayer : MonoBehaviour
                 Jump(rbMiddle);
                 Jump(rbBottom);
                 playerBottom.GetComponent<BottomPlayerScript>().canJump = false;
+
             }
             else
             {
                 Jump(rbBottom);
                 playerBottom.GetComponent<BottomPlayerScript>().canJump = false;
+
             }
 
 
@@ -119,6 +121,8 @@ public class MovementPlayer : MonoBehaviour
                 Jump(rbMiddle);
                 playerMiddle.GetComponent<MiddlePlayerScript>().canJump = false;
                 playerMiddle.GetComponent<MiddlePlayerScript>().syncJump = false;
+                playerMiddle.GetComponent<MiddlePlayerScript>().Animation();
+
             }
 
         }

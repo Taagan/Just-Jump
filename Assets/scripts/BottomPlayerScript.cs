@@ -23,4 +23,8 @@ public class BottomPlayerScript : MonoBehaviour
             canJump = true;
         }
     }
+    public void Animation()
+    {
+        gameObject.GetComponentInChildren<AnimationScript>().PlayAnimation();
+    }
 }

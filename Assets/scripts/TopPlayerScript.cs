@@ -7,12 +7,11 @@ public class TopPlayerScript : MonoBehaviour
     public bool canJump;
     public bool syncJump;
     public GameObject middlePlayer;
-    public Animator ani;
     // Start is called before the first frame update
     void Start()
     {
+
         canJump = true;
-        ani.enabled = false;
     }
 
     // Update is called once per frame
@@ -41,7 +40,6 @@ public class TopPlayerScript : MonoBehaviour
 
     public void Animation()
     {
-        ani.enabled = true;
-        ani.Play("FlopAnimation");
+        gameObject.GetComponentInChildren<AnimationScript>().PlayAnimation();
     }
 }
