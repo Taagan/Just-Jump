@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class MainMenuScript : MonoBehaviour
+
+public class MenuScript : MonoBehaviour
 {
     // Start is called before the first frame update
     void Start()
@@ -17,12 +18,16 @@ public class MainMenuScript : MonoBehaviour
         
     }
 
-
-
     public void SelectLevel()
     {
         //Swap scene to "SelectLevel"
         Debug.Log("hej");
+        SceneManager.LoadScene(1);
+    }
+    public void Level01()
+    {
+        SceneManager.LoadScene(2);
+
     }
     public void Options()
     {
@@ -30,6 +35,7 @@ public class MainMenuScript : MonoBehaviour
     }
     public void QuitTheGame()
     {
+        Application.Quit();
         //Exit the game
     }
 }
