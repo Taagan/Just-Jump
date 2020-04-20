@@ -6,6 +6,9 @@ using UnityEngine.SceneManagement;
 
 public class MenuScript : MonoBehaviour
 {
+
+    public static int currentLevelIndex = 0;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -18,24 +21,24 @@ public class MenuScript : MonoBehaviour
         
     }
 
-    public void SelectLevel()
+    public void LoadLevel(int levelIndex)
     {
-        //Swap scene to "SelectLevel"
-        Debug.Log("hej");
-        SceneManager.LoadScene(1);
-    }
-    public void Level01()
-    {
-        SceneManager.LoadScene(2);
-
+        currentLevelIndex = levelIndex;
+        SceneManager.LoadScene(levelIndex);
     }
     public void Options()
     {
         //Swap scene to "Options"
+        SceneManager.LoadScene(2);
+
     }
     public void QuitTheGame()
     {
         Application.Quit();
         //Exit the game
+    }
+    public void RestartLevel()
+    {
+        SceneManager.LoadScene(currentLevelIndex);
     }
 }

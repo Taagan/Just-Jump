@@ -74,4 +74,6 @@ public class LevelManagerScript : MonoBehaviour
         songTitle.text = Camera.main.GetComponent<AudioSource>().clip.name;
         totalSecondsInSong = Camera.main.GetComponent<AudioSource>().clip.length;
     }
+
+
 }
