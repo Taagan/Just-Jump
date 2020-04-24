@@ -430,6 +430,11 @@ PrefabInstance:
       propertyPath: zoomTo
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 2055514190995226456, guid: e03178b91620b0247a0748c1d72d1d2d,
+        type: 3}
+      propertyPath: zoomFactor
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 6433990749427697191, guid: e03178b91620b0247a0748c1d72d1d2d,
         type: 3}
       propertyPath: m_Name
@@ -3321,6 +3326,11 @@ PrefabInstance:
       propertyPath: zoomTo
       value: 15
       objectReference: {fileID: 0}
+    - target: {fileID: 2055514190995226456, guid: e03178b91620b0247a0748c1d72d1d2d,
+        type: 3}
+      propertyPath: zoomFactor
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 6433990749427697191, guid: e03178b91620b0247a0748c1d72d1d2d,
         type: 3}
       propertyPath: m_Name
@@ -4301,10 +4311,15 @@ PrefabInstance:
       propertyPath: zoomTo
       value: 7
       objectReference: {fileID: 0}
+    - target: {fileID: 2055514190995226456, guid: e03178b91620b0247a0748c1d72d1d2d,
+        type: 3}
+      propertyPath: zoomFactor
+      value: -8
+      objectReference: {fileID: 0}
     - target: {fileID: 6433990749427697191, guid: e03178b91620b0247a0748c1d72d1d2d,
         type: 3}
       propertyPath: m_Name
-      value: Zoom (16)
+      value: Zoom (7)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e03178b91620b0247a0748c1d72d1d2d, type: 3}
