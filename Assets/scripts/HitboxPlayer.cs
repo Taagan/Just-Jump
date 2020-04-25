@@ -7,28 +7,22 @@ using System;
 
 public class HitboxPlayer : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-    }
-
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.tag == "BonusPoint")
         {
             collision.gameObject.GetComponent<SoundEffectCode>().PlaySoundEffect();
-
+            GUIscript.coinsTaken++;
+        }
+        else if (collision.gameObject.tag == "LevelEnd")
+        {
+            GUIscript.ChangeStateOfGame(WinOrLose.won);
         }
         else if (collision.gameObject.tag!="Player" && collision.gameObject.tag != "SafeBlock" /*&& collision.gameObject.tag !="BonusPoint"*/)
         {
-            SceneManager.LoadScene(0);
-
+            //SceneManager.LoadScene(0);
+            Time.timeScale = 0;
+            GUIscript.ChangeStateOfGame(WinOrLose.lost);
         }
-
     }
 }

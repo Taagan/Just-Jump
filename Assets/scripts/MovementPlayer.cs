@@ -17,8 +17,6 @@ public class MovementPlayer : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-
-
         rbBottom = playerBottom.GetComponent<Rigidbody2D>();
         rbMiddle = playerMiddle.GetComponent<Rigidbody2D>();
         rbTop = playerTop.GetComponent<Rigidbody2D>();
@@ -28,7 +26,6 @@ public class MovementPlayer : MonoBehaviour
         if (BoostMode == true)
         {
             currentMode = Mode.boostMode;
-
         }
     }
 
@@ -52,7 +49,6 @@ public class MovementPlayer : MonoBehaviour
         {
             NormalJump();
         }
-
 
         rbTop.velocity = new Vector2(speed, rbTop.velocity.y);                 // <spelet funkar utan dessa pga if satserna ovanför
         rbMiddle.velocity = new Vector2(speed, rbMiddle.velocity.y);           // <spelet funkar utan dessa
@@ -83,26 +79,31 @@ public class MovementPlayer : MonoBehaviour
                 if (playerTop.GetComponent<TopPlayerScript>().syncJump == true && playerMiddle.GetComponent<MiddlePlayerScript>().syncJump == true)
                 {
                     Jump(rbTop);
+                    GUIscript.jumpCounterTop++;
                 }
                 if (playerMiddle.GetComponent<MiddlePlayerScript>().syncJump == true)
                 {
                     Jump(rbMiddle);
+                    GUIscript.jumpCounterMiddle++;
                 }
                 Jump(rbBottom);
+                GUIscript.jumpCounterBottom++;
                 playerBottom.GetComponent<BottomPlayerScript>().canJump = false;
             }
             else if (playerMiddle.GetComponent<MiddlePlayerScript>().canJump == true && playerTop.GetComponent<TopPlayerScript>().canJump == false)
             {
                 Jump(rbMiddle);
                 Jump(rbBottom);
+                GUIscript.jumpCounterBottom++;
+                GUIscript.jumpCounterMiddle++;
                 playerBottom.GetComponent<BottomPlayerScript>().canJump = false;
             }
             else
             {
                 Jump(rbBottom);
+                GUIscript.jumpCounterBottom++;
                 playerBottom.GetComponent<BottomPlayerScript>().canJump = false;
             }
-
 
         }
         if (Input.GetKeyDown(KeyCode.S) && playerMiddle.GetComponent<MiddlePlayerScript>().canJump == true)
@@ -111,12 +112,15 @@ public class MovementPlayer : MonoBehaviour
             {
                 Jump(rbTop);
                 Jump(rbMiddle);
+                GUIscript.jumpCounterTop++;
+                GUIscript.jumpCounterMiddle++;
                 playerMiddle.GetComponent<MiddlePlayerScript>().canJump = false;
                 playerMiddle.GetComponent<MiddlePlayerScript>().syncJump = false;
             }
             else
             {
                 Jump(rbMiddle);
+                GUIscript.jumpCounterMiddle++;
                 playerMiddle.GetComponent<MiddlePlayerScript>().canJump = false;
                 playerMiddle.GetComponent<MiddlePlayerScript>().syncJump = false;
             }
@@ -125,6 +129,7 @@ public class MovementPlayer : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.A) && playerTop.GetComponent<TopPlayerScript>().canJump == true)
         {
             Jump(rbTop);
+            GUIscript.jumpCounterTop++;
             playerTop.GetComponent<TopPlayerScript>().canJump = false;
             playerTop.GetComponent<TopPlayerScript>().syncJump = false;
         }
