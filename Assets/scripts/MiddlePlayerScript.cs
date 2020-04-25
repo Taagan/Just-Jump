@@ -6,6 +6,8 @@ public class MiddlePlayerScript : MonoBehaviour
 {
     public bool canJump;
     public bool syncJump;
+    public BoxCollider2D boxCol2D;
+    public GameObject bottomPlayer;
     // Start is called before the first frame update
     void Start()
     {
@@ -15,8 +17,13 @@ public class MiddlePlayerScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (boxCol2D.bounds.Intersects(bottomPlayer.GetComponent<BoxCollider2D>().bounds))
+        {
+            canJump = true;
+        }
+
     }
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnCollision2D(Collision2D collision)
     {
         if (collision.gameObject.tag == "BottomPlayer")
         {

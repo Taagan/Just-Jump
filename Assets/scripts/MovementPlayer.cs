@@ -75,6 +75,7 @@ public class MovementPlayer : MonoBehaviour
 
     private void BoostedJump()
     {
+        
         if (Input.GetKeyDown(KeyCode.D) && playerBottom.GetComponent<BottomPlayerScript>().canJump == true)
         {
             if (playerMiddle.GetComponent<MiddlePlayerScript>().canJump == true && playerTop.GetComponent<TopPlayerScript>().canJump == true)
