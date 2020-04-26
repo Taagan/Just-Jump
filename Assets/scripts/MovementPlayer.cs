@@ -22,16 +22,20 @@ public class MovementPlayer : MonoBehaviour
         rbTop = playerTop.GetComponent<Rigidbody2D>();
         rbGameMaster = GetComponent<Rigidbody2D>();
         //Make this cleaner
-        currentMode = Mode.normal;
         if (BoostMode == true)
         {
             currentMode = Mode.boostMode;
+        }
+        else
+        {
+            currentMode = Mode.normal;
         }
     }
 
     // Update is called once per frame
     void Update()
     {
+        #region player alignment
         if (playerTop.transform.position.x != playerBottom.transform.position.x)
         {
             playerTop.transform.position = new Vector3(playerBottom.transform.position.x, playerTop.transform.position.y, playerTop.transform.position.z);
@@ -40,7 +44,7 @@ public class MovementPlayer : MonoBehaviour
         {
             playerMiddle.transform.position = new Vector3(playerBottom.transform.position.x, playerMiddle.transform.position.y, playerMiddle.transform.position.z);
         }
-
+        #endregion
         if (currentMode == Mode.boostMode)
         {
             BoostedJump();
@@ -86,8 +90,8 @@ public class MovementPlayer : MonoBehaviour
                     Jump(rbMiddle);
                     GUIscript.jumpCounterMiddle++;
                 }
-                Jump(rbBottom);
                 GUIscript.jumpCounterBottom++;
+                Jump(rbBottom);
                 playerBottom.GetComponent<BottomPlayerScript>().canJump = false;
             }
             else if (playerMiddle.GetComponent<MiddlePlayerScript>().canJump == true && playerTop.GetComponent<TopPlayerScript>().canJump == false)
@@ -104,8 +108,8 @@ public class MovementPlayer : MonoBehaviour
                 GUIscript.jumpCounterBottom++;
                 playerBottom.GetComponent<BottomPlayerScript>().canJump = false;
             }
-
         }
+
         if (Input.GetKeyDown(KeyCode.S) && playerMiddle.GetComponent<MiddlePlayerScript>().canJump == true)
         {
             if (playerTop.GetComponent<TopPlayerScript>().canJump == true)
