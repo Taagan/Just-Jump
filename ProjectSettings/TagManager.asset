@@ -11,6 +11,7 @@ TagManager:
   - TopPlayer
   - BonusPoint
   - EndOfLevel
+  - Background
   layers:
   - Default
   - TransparentFX

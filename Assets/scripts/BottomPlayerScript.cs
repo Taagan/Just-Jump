@@ -16,7 +16,7 @@ public class BottomPlayerScript : MonoBehaviour
     {
         
     }
-    private void OnCollision2D(Collision2D collision)
+    private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.tag == "Ground")
         {
