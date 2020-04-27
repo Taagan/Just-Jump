@@ -33,4 +33,9 @@ public class MiddlePlayerScript : MonoBehaviour
     {
         syncJump = true;
     }
+
+    public void Animation()
+    {
+        //gameObject.GetComponentInChildren<AnimationScript>().PlayAnimation(); 
+    }
 }

@@ -114,9 +114,12 @@ public class MovementPlayer : MonoBehaviour
         {
             if (playerTop.GetComponent<TopPlayerScript>().canJump == true)
             {
-                Jump(rbTop);
+                if (playerTop.GetComponent<TopPlayerScript>().syncJump == true)
+                {
+                    Jump(rbTop);
+                    GUIscript.jumpCounterTop++;
+                }
                 Jump(rbMiddle);
-                GUIscript.jumpCounterTop++;
                 GUIscript.jumpCounterMiddle++;
                 playerMiddle.GetComponent<MiddlePlayerScript>().canJump = false;
                 playerMiddle.GetComponent<MiddlePlayerScript>().syncJump = false;
