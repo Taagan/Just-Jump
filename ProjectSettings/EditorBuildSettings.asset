@@ -6,9 +6,21 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/Game Scene.unity
-    guid: 2cda990e2423bbf4892e6590ba056729
+    path: Assets/Scenes/StartMenu.unity
+    guid: 5ad1c1a645b51be45a161b1539a62184
   - enabled: 1
     path: Assets/Scenes/Level Select Scene.unity
     guid: e132e1969c63b1f4c82543a00e20d6d4
+  - enabled: 1
+    path: Assets/Scenes/Options.unity
+    guid: 1e7cf6ba78918da40b22c60baf355d56
+  - enabled: 1
+    path: Assets/Scenes/VictoryScreen.unity
+    guid: bc6a67d2a09471c44b0915aba7e537f8
+  - enabled: 1
+    path: Assets/Scenes/Game Scene.unity
+    guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 1
+    path: Assets/Scenes/HardMap01(Witches' party).unity
+    guid: ca601c556ffcc9f40b32cb9267f3895c
   m_configObjects: {}
