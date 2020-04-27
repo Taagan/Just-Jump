@@ -17,7 +17,9 @@ public class GUIscript : MonoBehaviour
    static AudioSource audioSource;
     Color purple, yellow;
    public static WinOrLose currentState;
-   public static bool menuIsOpen;
+    [SerializeField]
+    public static bool menuIsOpen = false;
+
     //float savedSpeed = MovementPlayer.thisInstance.speed;
     // Start is called before the first frame update
     void Start()

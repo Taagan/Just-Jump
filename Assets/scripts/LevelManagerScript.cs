@@ -7,7 +7,7 @@ using UnityEngine.UI;
 
 public class LevelManagerScript : MonoBehaviour
 {
-  public static int currentLevelIndex = 0;
+    public static int currentLevelIndex;
 
     [SerializeField]
     private Text author, songTitle, percentageText;
@@ -28,6 +28,7 @@ public class LevelManagerScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        currentLevelIndex = SceneManager.GetActiveScene().buildIndex;
         if (!inLevelSelect)
         {
             GetCurrentSong();
@@ -54,6 +55,8 @@ public class LevelManagerScript : MonoBehaviour
                 angledProgressBar.transform.position = Vector3.Lerp(startPos, endPos, t);
             }
         }
+
+        Debug.Log(Time.timeScale);
     }
 
     public void LoadLevel(int levelIndex)
