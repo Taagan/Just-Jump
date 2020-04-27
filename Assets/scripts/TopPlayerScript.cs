@@ -19,9 +19,9 @@ public class TopPlayerScript : MonoBehaviour
     {
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnCollisionStay2D(Collision2D collision)
     {
-        canJump = true;
+           canJump = true;
         if (collision.gameObject.tag == "MiddlePlayer")
         {
             syncJump = true;

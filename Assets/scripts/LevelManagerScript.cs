@@ -37,7 +37,6 @@ public class LevelManagerScript : MonoBehaviour
             startTime = Time.time;
             distanceToTravel = Vector3.Distance(gameObject.transform.position, endOfLevelMarker.transform.position);
         }
-        
     }
 
     // Update is called once per frame
@@ -55,7 +54,6 @@ public class LevelManagerScript : MonoBehaviour
                 angledProgressBar.transform.position = Vector3.Lerp(startPos, endPos, t);
             }
         }
-        
     }
 
     public void LoadLevel(int levelIndex)
@@ -67,6 +65,7 @@ public class LevelManagerScript : MonoBehaviour
     public void ReloadCurrentLevel()
     {
         SceneManager.LoadScene(currentLevelIndex);
+        GUIscript.resetStats();
     }
 
     public void GetCurrentSong()
@@ -75,5 +74,8 @@ public class LevelManagerScript : MonoBehaviour
         totalSecondsInSong = Camera.main.GetComponent<AudioSource>().clip.length;
     }
 
-
+    public void Quit()
+    {
+        Application.Quit();
+    }
 }
