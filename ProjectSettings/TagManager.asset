@@ -12,6 +12,8 @@ TagManager:
   - BonusPoint
   - EndOfLevel
   - Background
+  - LevelEnd
+  - JumpRefresh
   layers:
   - Default
   - TransparentFX
