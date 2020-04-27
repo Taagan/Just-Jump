@@ -12,3 +12,6 @@
 # Nu kan du ladda ner spelet genom att köra "JustJumpSetUp". 
 
 Ändringar från Jesper
+
+
+Om ni vill ha den nyaste versionen så är den inte i master än det är "levels" branchen.

@@ -75,6 +75,7 @@ public class MovementPlayer : MonoBehaviour
 
     private void BoostedJump()
     {
+        
         if (Input.GetKeyDown(KeyCode.D) && playerBottom.GetComponent<BottomPlayerScript>().canJump == true)
         {
             if (playerMiddle.GetComponent<MiddlePlayerScript>().canJump == true && playerTop.GetComponent<TopPlayerScript>().canJump == true)
@@ -101,12 +102,14 @@ public class MovementPlayer : MonoBehaviour
                 GUIscript.jumpCounterBottom++;
                 GUIscript.jumpCounterMiddle++;
                 playerBottom.GetComponent<BottomPlayerScript>().canJump = false;
+
             }
             else
             {
                 Jump(rbBottom);
                 GUIscript.jumpCounterBottom++;
                 playerBottom.GetComponent<BottomPlayerScript>().canJump = false;
+
             }
         }
 
@@ -127,6 +130,8 @@ public class MovementPlayer : MonoBehaviour
                 GUIscript.jumpCounterMiddle++;
                 playerMiddle.GetComponent<MiddlePlayerScript>().canJump = false;
                 playerMiddle.GetComponent<MiddlePlayerScript>().syncJump = false;
+                playerMiddle.GetComponent<MiddlePlayerScript>().Animation();
+
             }
 
         }
@@ -136,6 +141,7 @@ public class MovementPlayer : MonoBehaviour
             GUIscript.jumpCounterTop++;
             playerTop.GetComponent<TopPlayerScript>().canJump = false;
             playerTop.GetComponent<TopPlayerScript>().syncJump = false;
+            playerTop.GetComponent<TopPlayerScript>().Animation();
         }
     }
 

@@ -10,13 +10,13 @@ public class TopPlayerScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+
         canJump = true;
     }
 
     // Update is called once per frame
     void Update()
     {
-
     }
 
     private void OnCollisionStay2D(Collision2D collision)
@@ -32,8 +32,14 @@ public class TopPlayerScript : MonoBehaviour
             syncJump = false;
         }
     }
+
     private void OnCollisionExit2D(Collision2D collision)
     {
         syncJump = true;
+    }
+
+    public void Animation()
+    {
+        gameObject.GetComponentInChildren<AnimationScript>().PlayAnimation();
     }
 }

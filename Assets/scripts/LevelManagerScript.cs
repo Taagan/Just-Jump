@@ -36,7 +36,7 @@ public class LevelManagerScript : MonoBehaviour
             endPos = blackBackgroundProgressBar.transform.position;
             startTime = Time.time;
             distanceToTravel = Vector3.Distance(gameObject.transform.position, endOfLevelMarker.transform.position);
-        }       
+        }
     }
 
     // Update is called once per frame
@@ -53,7 +53,7 @@ public class LevelManagerScript : MonoBehaviour
             {
                 angledProgressBar.transform.position = Vector3.Lerp(startPos, endPos, t);
             }
-        }       
+        }
     }
 
     public void LoadLevel(int levelIndex)

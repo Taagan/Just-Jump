@@ -10,7 +10,8 @@ TagManager:
   - MiddlePlayer
   - TopPlayer
   - BonusPoint
-  - LevelEnd
+  - EndOfLevel
+  - Background
   layers:
   - Default
   - TransparentFX

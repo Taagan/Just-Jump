@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: -1769860448636165920}
   - component: {fileID: 2055514190995226456}
   m_Layer: 0
-  m_Name: ZoomOut
+  m_Name: Zoom
   m_TagString: SafeBlock
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -42,7 +42,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -70,7 +70,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e6107dfd8d8ce8a4bad2c36c66006672, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  zoomOut: 0
-  zoomIn: 0
   camera: {fileID: 0}
-  zoomValue: 0
+  zoomTo: 0
+  README: Default Zoom is 7

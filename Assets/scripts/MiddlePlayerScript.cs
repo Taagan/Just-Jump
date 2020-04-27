@@ -15,6 +15,7 @@ public class MiddlePlayerScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
     }
     private void OnCollisionStay2D(Collision2D collision)
     {
@@ -32,5 +33,9 @@ public class MiddlePlayerScript : MonoBehaviour
     private void OnCollisionExit2D(Collision2D collision)
     {
         syncJump = true;
+    }
+    public void Animation()
+    {
+        gameObject.GetComponentInChildren<AnimationScript>().PlayAnimation();
     }
 }
