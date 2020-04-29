@@ -12,12 +12,6 @@ public class MiddlePlayerScript : MonoBehaviour
         canJump = true;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
-
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.tag == "JumpRefresh")
@@ -32,7 +26,8 @@ public class MiddlePlayerScript : MonoBehaviour
             syncJump = true;
             canJump = true;
         }
-        if (collision.gameObject.tag == "Ground") //Kommer endast användas om man vill att kuberna inte ska hoppa tsm såvida de är connectade;
+        //Kommer endast användas om man vill att kuberna inte ska hoppa tsm såvida de är connectade;
+        if (collision.gameObject.tag == "Ground")
         {
             canJump = true;
             syncJump = false;

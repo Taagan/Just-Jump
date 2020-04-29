@@ -7,13 +7,8 @@ public class MovementPlayer : MonoBehaviour
     
 
     public GameObject playerTop, playerMiddle, playerBottom;
-
-    public float speed;
-    public float jumpForce;
     Rigidbody2D rbBottom, rbMiddle, rbTop, rbGameMaster;
-    public enum Mode { normal, boostMode }
-    Mode currentMode;
-    public bool BoostMode = false;
+    public float speed, jumpForce;
     // Use this for initialization
     void Start()
     {
@@ -21,15 +16,6 @@ public class MovementPlayer : MonoBehaviour
         rbMiddle = playerMiddle.GetComponent<Rigidbody2D>();
         rbTop = playerTop.GetComponent<Rigidbody2D>();
         rbGameMaster = GetComponent<Rigidbody2D>();
-        //Make this cleaner
-        if (BoostMode == true)
-        {
-            currentMode = Mode.boostMode;
-        }
-        else
-        {
-            currentMode = Mode.normal;
-        }
     }
 
     // Update is called once per frame
@@ -45,33 +31,17 @@ public class MovementPlayer : MonoBehaviour
             playerMiddle.transform.position = new Vector3(playerBottom.transform.position.x, playerMiddle.transform.position.y, playerMiddle.transform.position.z);
         }
         #endregion
-        if (currentMode == Mode.boostMode)
-        {
-            BoostedJump();
-        }
-        else
-        {
-            NormalJump();
-        }
+        BoostedJump();
 
-        rbTop.velocity = new Vector2(speed, rbTop.velocity.y);                 // <spelet funkar utan dessa pga if satserna ovanför
-        rbMiddle.velocity = new Vector2(speed, rbMiddle.velocity.y);           // <spelet funkar utan dessa
         rbBottom.velocity = new Vector2(speed, rbBottom.velocity.y);
 
         rbGameMaster.velocity = new Vector2(speed, 0);
-
-        //Debug 
-        //Debug.Log("Connected A:" +playerTop.GetComponent<TopPlayerScript>().syncJump  +"S:"+
-        //    playerMiddle.GetComponent<MiddlePlayerScript>().syncJump + "\n Can Jump" + 
-        //   "A:"+ playerMiddle.GetComponent<MiddlePlayerScript>().canJump + " S:"+
-        //   playerTop.GetComponent<TopPlayerScript>().canJump);
     }
 
     private void Jump(Rigidbody2D rb)
     {
-        rb.velocity = new Vector2(speed, jumpForce);    //kan lägga 0 istället för speed, samma sak händer
+        rb.velocity = new Vector2(speed, jumpForce);    //speed blir vertikala vikeln
     }
-
 
     private void BoostedJump()
     {
@@ -142,28 +112,6 @@ public class MovementPlayer : MonoBehaviour
             playerTop.GetComponent<TopPlayerScript>().canJump = false;
             playerTop.GetComponent<TopPlayerScript>().syncJump = false;
             playerTop.GetComponent<TopPlayerScript>().Animation();
-        }
-    }
-
-    private void NormalJump()
-    {
-        if (Input.GetKeyDown(KeyCode.D) && playerBottom.GetComponent<BottomPlayerScript>().canJump == true)
-        {
-            Jump(rbTop);
-            Jump(rbMiddle);
-            Jump(rbBottom);
-            playerBottom.GetComponent<BottomPlayerScript>().canJump = false;
-        }
-        if (Input.GetKeyDown(KeyCode.S) && playerMiddle.GetComponent<MiddlePlayerScript>().canJump == true)
-        {
-            Jump(rbTop);
-            Jump(rbMiddle);
-            playerMiddle.GetComponent<MiddlePlayerScript>().canJump = false;
-        }
-        if (Input.GetKeyDown(KeyCode.A) && playerTop.GetComponent<TopPlayerScript>().canJump == true)
-        {
-            Jump(rbTop);
-            playerTop.GetComponent<TopPlayerScript>().canJump = false;
         }
     }
 }
