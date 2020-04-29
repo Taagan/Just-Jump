@@ -2,17 +2,20 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 
 public class MenuScript : MonoBehaviour
 {
 
     public static int currentLevelIndex = 0;
-
+    public Toggle instantRestartToggle;
+   public static bool instantRestart;
     // Start is called before the first frame update
     void Start()
     {
-        
+        instantRestartToggle.onValueChanged.AddListener(delegate
+        { InstantRestart(); } );
     }
 
     // Update is called once per frame
@@ -41,4 +44,18 @@ public class MenuScript : MonoBehaviour
     {
         SceneManager.LoadScene(currentLevelIndex);
     }
+
+    public static void InstantRestart()
+    {
+        if (instantRestart)
+        {
+            instantRestart = false;
+        }
+        else
+        {
+            instantRestart = true;
+        }
+        Debug.Log(instantRestart);
+    }
+
 }

@@ -25,8 +25,15 @@ public class HitboxPlayer : MonoBehaviour
         else if (collision.gameObject.tag != "TopPlayer" && collision.gameObject.tag != "MiddlePlayer" && collision.gameObject.tag != "BottomPlayer" && collision.gameObject.tag!="Player" && collision.gameObject.tag != "SafeBlock" /*&& collision.gameObject.tag !="BonusPoint"*/)
         {
             //SceneManager.LoadScene(0);
-            Time.timeScale = 0;
-            GUIscript.ChangeStateOfGame(WinOrLose.lost);
+            if (!MenuScript.instantRestart)
+            {
+                LevelManagerScript.ReloadCurrentUsingStatic();
+            }
+            else
+            {
+                Time.timeScale = 0;
+                GUIscript.ChangeStateOfGame(WinOrLose.lost);
+            }
         }
     }
 
