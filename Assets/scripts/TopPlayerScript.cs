@@ -36,6 +36,7 @@ public class TopPlayerScript : MonoBehaviour
     private void OnCollisionExit2D(Collision2D collision)
     {
         syncJump = true;
+        canJump = false;
     }
 
     public void Animation()
