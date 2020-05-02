@@ -84,12 +84,11 @@ public class MovementPlayer : MonoBehaviour
                 if (playerTop.GetComponent<TopPlayerScript>().syncJump == true && playerMiddle.GetComponent<MiddlePlayerScript>().syncJump == true)
                 {
                     Jump(rbTop);
-                    GUIscript.jumpCounterTop++;
+                    
                 }
                 if (playerMiddle.GetComponent<MiddlePlayerScript>().syncJump == true)
                 {
                     Jump(rbMiddle);
-                    GUIscript.jumpCounterMiddle++;
                 }
                 GUIscript.jumpCounterBottom++;
                 Jump(rbBottom);
@@ -100,7 +99,6 @@ public class MovementPlayer : MonoBehaviour
                 Jump(rbMiddle);
                 Jump(rbBottom);
                 GUIscript.jumpCounterBottom++;
-                GUIscript.jumpCounterMiddle++;
                 playerBottom.GetComponent<BottomPlayerScript>().canJump = false;
 
             }
@@ -119,7 +117,6 @@ public class MovementPlayer : MonoBehaviour
             {
                 Jump(rbTop);
                 Jump(rbMiddle);
-                GUIscript.jumpCounterTop++;
                 GUIscript.jumpCounterMiddle++;
                 playerMiddle.GetComponent<MiddlePlayerScript>().canJump = false;
                 playerMiddle.GetComponent<MiddlePlayerScript>().syncJump = false;
