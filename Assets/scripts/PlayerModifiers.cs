@@ -7,17 +7,6 @@ public class PlayerModifiers : MonoBehaviour
 
     public GameObject gameMaster;
     public int newSpeedValue;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 
 
 

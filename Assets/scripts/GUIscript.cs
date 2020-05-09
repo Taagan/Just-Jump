@@ -9,11 +9,11 @@ public enum WinOrLose
 }
 public class GUIscript : MonoBehaviour
 {
-   public static int jumpCounterTop = 0, jumpCounterMiddle = 0, jumpCounterBottom = 0, jumpCounterTotal = 0, coinsTaken = 0;
-   public GameObject pauseMenuParent;
+    public static int jumpCounterTop = 0, jumpCounterMiddle = 0, jumpCounterBottom = 0, jumpCounterTotal = 0, coinsTaken = 0;
+    public GameObject pauseMenuParent;
     public GameObject topBlockText, middleBlockText, bottomBlockText, totalText, rankText, jumpsTitleText;
     public GameObject WinMenuParent, winMenuReportCard;
-    public GameObject LoseMenuParent;
+    public GameObject LoseMenuParent,timer;
    static AudioSource audioSource;
     Color purple, yellow;
    public static WinOrLose currentState;
@@ -60,6 +60,7 @@ public class GUIscript : MonoBehaviour
             case WinOrLose.lost:
 
                 Time.timeScale = 0;
+                timer.GetComponent<Timer>().timer = 0;
                 LoseMenuParent.SetActive(true);
                 audioSource.Pause();
 
@@ -124,7 +125,7 @@ public class GUIscript : MonoBehaviour
         GUIscript.coinsTaken = 0;
         GUIscript.jumpCounterBottom = 0;
         GUIscript.jumpCounterMiddle = 0;
-        GUIscript.jumpCounterTop = 0;
+        GUIscript.jumpCounterTop = 0;       
     }
 
     private void updateColorOnText(Color c)

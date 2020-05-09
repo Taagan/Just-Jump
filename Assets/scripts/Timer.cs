@@ -7,18 +7,17 @@ public class Timer : MonoBehaviour
 {
     public float timer;
     public Text text;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
-    // Update is called once per frame
+
     void Update()
     {
-
         timer = Time.time;
         timer = (int)timer;
         text.text = "" + timer.ToString();
+    }
+
+    public void ResetTimer()
+    {
+        timer = 0;
     }
 }
