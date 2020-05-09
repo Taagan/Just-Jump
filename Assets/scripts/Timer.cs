@@ -11,9 +11,13 @@ public class Timer : MonoBehaviour
 
     void Update()
     {
-
         timer = Time.time;
         timer = (int)timer;
         text.text = "" + timer.ToString();
+    }
+
+    public void ResetTimer()
+    {
+        timer = 0;
     }
 }

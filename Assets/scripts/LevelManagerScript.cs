@@ -19,9 +19,9 @@ public class LevelManagerScript : MonoBehaviour
 
     float totalSecondsInSong, progressBarXSpeed, distanceToTravel;
     Vector3 startPos, endPos;
-    public GameObject endOfLevelMarker;
+    public GameObject endOfLevelMarker,timer;
 
-    public bool inLevelSelect;
+    public bool inLevelSelect;  
     private float startTime;
 
     GameObject gameMaster;
@@ -67,8 +67,10 @@ public class LevelManagerScript : MonoBehaviour
 
     public void ReloadCurrentLevel()
     {
+        
         SceneManager.LoadScene(currentLevelIndex);
         GUIscript.resetStats();
+
     }
 
     public void GetCurrentSong()
@@ -81,4 +83,5 @@ public class LevelManagerScript : MonoBehaviour
     {
         Application.Quit();
     }
+
 }

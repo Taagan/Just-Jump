@@ -4,11 +4,15 @@ using UnityEngine;
 
 public class MovementPlayer : MonoBehaviour
 {
-    
+    public enum Mode
+    {
+        normal,debug
+    }
 
-    public GameObject playerTop, playerMiddle, playerBottom;
+    public GameObject playerTop, playerMiddle, playerBottom,bottomSprite,middleSprite,topSprite;
     Rigidbody2D rbBottom, rbMiddle, rbTop, rbGameMaster;
     public float speed, jumpForce;
+    public Mode mode; 
     // Use this for initialization
     void Start()
     {
@@ -16,6 +20,18 @@ public class MovementPlayer : MonoBehaviour
         rbMiddle = playerMiddle.GetComponent<Rigidbody2D>();
         rbTop = playerTop.GetComponent<Rigidbody2D>();
         rbGameMaster = GetComponent<Rigidbody2D>();
+        switch (mode)
+        {
+            case Mode.normal:
+                break;
+            case Mode.debug:
+                rbBottom.simulated = false;
+                rbMiddle.simulated = false;
+                rbTop.simulated = false;
+                jumpForce = 0;
+
+                break;
+        }
     }
 
     // Update is called once per frame
@@ -36,11 +52,25 @@ public class MovementPlayer : MonoBehaviour
         rbBottom.velocity = new Vector2(speed, rbBottom.velocity.y);
 
         rbGameMaster.velocity = new Vector2(speed, 0);
+        switch (mode)
+        {
+            case Mode.normal:
+                break;
+            case Mode.debug:
+                debugMovement();
+                break;
+        }
     }
+    public void debugMovement()
+    {
+        bottomSprite.transform.position = new Vector2(rbGameMaster.position.x, playerBottom.transform.position.y);
+        middleSprite.transform.position = new Vector2(rbGameMaster.position.x, playerMiddle.transform.position.y);
+        topSprite.transform.position = new Vector2(rbGameMaster.position.x, playerTop.transform.position.y);
 
+    }
     private void Jump(Rigidbody2D rb)
     {
-        rb.velocity = new Vector2(speed, jumpForce);    //speed blir vertikala vikeln
+        rb.velocity = new Vector2(speed, jumpForce);    //speed blir horizentala vikeln
     }
 
     private void BoostedJump()
