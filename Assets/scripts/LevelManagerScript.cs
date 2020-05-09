@@ -45,7 +45,7 @@ public class LevelManagerScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        float currentSpeed = gameMaster.GetComponent<MovementPlayer>().speed;
+        float currentSpeed = gameObject.GetComponent<MovementPlayer>().speed;
         if (!inLevelSelect)
         {
             float distCovered = (Time.time - startTime) * currentSpeed;

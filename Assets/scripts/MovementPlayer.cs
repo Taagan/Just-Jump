@@ -12,6 +12,7 @@ public class MovementPlayer : MonoBehaviour
     public GameObject playerTop, playerMiddle, playerBottom,bottomSprite,middleSprite,topSprite;
     Rigidbody2D rbBottom, rbMiddle, rbTop, rbGameMaster;
     public float speed, jumpForce;
+    public static float speedCopy;
     public Mode mode;
     // Use this for initialization
     void Start()
@@ -37,6 +38,7 @@ public class MovementPlayer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        speedCopy = speed;
         #region player alignment
         if (playerTop.transform.position.x != playerBottom.transform.position.x)
         {
