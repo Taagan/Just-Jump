@@ -16,18 +16,11 @@ public class SoundEffectCode : MonoBehaviour
         scoreManager = GetComponent<ScoreManager>();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
-
     public void PlaySoundEffect()
     {
         aS.PlayOneShot(aC, volume);
         gameObject.GetComponent<SpriteRenderer>().enabled = false;
-        //scoreManager.collectedBonuses += 1;
+        //Add score
         Destroy(this.gameObject, 2f);
     }
 

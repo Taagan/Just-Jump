@@ -415,7 +415,7 @@ GameObject:
   - component: {fileID: 6500537322489650036}
   - component: {fileID: 6500537322489650039}
   m_Layer: 0
-  m_Name: New Sprite
+  m_Name: TopPlayerSprite
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -497,7 +497,7 @@ GameObject:
   - component: {fileID: 6500537322705851319}
   - component: {fileID: 6500537322705851316}
   m_Layer: 0
-  m_Name: New Sprite
+  m_Name: BottomPlayerSprite
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -721,7 +721,7 @@ GameObject:
   - component: {fileID: 6500537322919388367}
   - component: {fileID: 6500537322919388366}
   m_Layer: 0
-  m_Name: New Sprite
+  m_Name: MiddlePlayerSprite
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

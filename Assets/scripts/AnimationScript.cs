@@ -6,6 +6,8 @@ public class AnimationScript : MonoBehaviour
 {
     public Animator anir;
     int jumpCalled = Animator.StringToHash("JumpCalled");
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -14,15 +16,9 @@ public class AnimationScript : MonoBehaviour
 
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
-
     public void PlayAnimation()
     {
+        //Play animation when called
         anir.SetTrigger(jumpCalled);
     }
 }
