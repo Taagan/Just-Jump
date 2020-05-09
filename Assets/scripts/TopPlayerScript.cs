@@ -33,11 +33,13 @@ public class TopPlayerScript : MonoBehaviour
         }
     }
 
-    private void OnCollisionExit2D(Collision2D collision)
-    {
-        syncJump = true;
-        canJump = false;
-    }
+
+    //DET E DENNA SOM GÖR ATT DUBBELHOPP INTE SKER; MEN DEN DÖDAR OXÅ HOPP OM ETT SPELAROBJEKT LANDAR PÄ DET HOPPANDE SPELAROBJEKTET.
+    //private void OnCollisionExit2D(Collision2D collision)
+    //{
+    //    syncJump = true;
+    //    canJump = false;
+    //}
 
     public void Animation()
     {

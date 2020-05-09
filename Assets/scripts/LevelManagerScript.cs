@@ -1,4 +1,4 @@
-﻿using System.Collections;
+﻿ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -7,7 +7,7 @@ using UnityEngine.UI;
 
 public class LevelManagerScript : MonoBehaviour
 {
-    public static int currentLevelIndex;
+    public static int currentLevelIndex, previousLevelIndex;
 
     [SerializeField]
     private Text author, songTitle, percentageText;
@@ -55,15 +55,19 @@ public class LevelManagerScript : MonoBehaviour
                 angledProgressBar.transform.position = Vector3.Lerp(startPos, endPos, t);
             }
         }
-
-        Debug.Log(Time.timeScale);
     }
 
     public void LoadLevel(int levelIndex)
     {
+        previousLevelIndex = currentLevelIndex;
         currentLevelIndex = levelIndex;
         SceneManager.LoadScene(levelIndex);
         GUIscript.resetStats();
+    }
+
+    public void ReloadPreviousLevel()
+    {
+        SceneManager.LoadScene(previousLevelIndex);
     }
 
     public void ReloadCurrentLevel()

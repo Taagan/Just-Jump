@@ -14,14 +14,11 @@ public class MenuScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        instantRestartToggle.onValueChanged.AddListener(delegate
-        { InstantRestart(); } );
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        if (SceneManager.GetActiveScene().name == "Options")
+        {
+            instantRestartToggle.onValueChanged.AddListener(delegate
+            { InstantRestart(); } );
+        }
     }
 
     public void LoadLevel(int levelIndex)
@@ -55,7 +52,6 @@ public class MenuScript : MonoBehaviour
         {
             instantRestart = true;
         }
-        Debug.Log(instantRestart);
     }
 
 }

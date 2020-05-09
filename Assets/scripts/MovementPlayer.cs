@@ -9,6 +9,7 @@ public class MovementPlayer : MonoBehaviour
     public GameObject playerTop, playerMiddle, playerBottom;
 
     public float speed;
+    public static float speedCopy;
     public float jumpForce;
     Rigidbody2D rbBottom, rbMiddle, rbTop, rbGameMaster;
     public enum Mode { normal, boostMode }
@@ -57,8 +58,9 @@ public class MovementPlayer : MonoBehaviour
         rbTop.velocity = new Vector2(speed, rbTop.velocity.y);                 // <spelet funkar utan dessa pga if satserna ovanför
         rbMiddle.velocity = new Vector2(speed, rbMiddle.velocity.y);           // <spelet funkar utan dessa
         rbBottom.velocity = new Vector2(speed, rbBottom.velocity.y);
+        speedCopy = speed;
 
-        rbGameMaster.velocity = new Vector2(speed, 0);
+       // rbGameMaster.velocity = new Vector2(speed, 0);
 
         //Debug 
         //Debug.Log("Connected A:" +playerTop.GetComponent<TopPlayerScript>().syncJump  +"S:"+
@@ -128,7 +130,6 @@ public class MovementPlayer : MonoBehaviour
                 playerMiddle.GetComponent<MiddlePlayerScript>().canJump = false;
                 playerMiddle.GetComponent<MiddlePlayerScript>().syncJump = false;
                 playerMiddle.GetComponent<MiddlePlayerScript>().Animation();
-
             }
 
         }

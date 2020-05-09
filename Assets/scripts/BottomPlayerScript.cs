@@ -24,18 +24,16 @@ public class BottomPlayerScript : MonoBehaviour
         }
     }
 
-    private void OnCollisionExit2D(Collision2D collision)
-    {
-        if (collision.gameObject.tag == "Ground")
-        {
-            canJump = false;
-        }
-    }
+    //private void OnCollisionExit2D(Collision2D collision)
+    //{
+    //    if (collision.gameObject.tag == "Ground")
+    //    {
+    //        canJump = false;
+    //    }
+    //}
 
     public void Animation()
     {
         gameObject.GetComponentInChildren<AnimationScript>().PlayAnimation();
     }
-
-    // TESTA GÖRA GROUNDED OBJECTS FÖR ALLA PLAYER OBJECTS
 }
