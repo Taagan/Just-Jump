@@ -39,4 +39,9 @@ public class MiddlePlayerScript : MonoBehaviour
     {
         gameObject.GetComponentInChildren<AnimationScript>().PlayAnimation();
     }
+
+    public void Animation()
+    {
+        //gameObject.GetComponentInChildren<AnimationScript>().PlayAnimation(); 
+    }
 }
