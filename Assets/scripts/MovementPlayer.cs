@@ -38,6 +38,7 @@ public class MovementPlayer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        speedCopy = speed;
         #region player alignment
         if (playerTop.transform.position.x != playerBottom.transform.position.x)
         {
