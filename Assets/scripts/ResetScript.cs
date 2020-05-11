@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class ResetScript : MonoBehaviour
 {
 
-    bool active;
+    public bool active;
     // Start is called before the first frame update
     void Start()
     {
@@ -18,8 +18,7 @@ public class ResetScript : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.L) && active)
         {
-            SceneManager.LoadScene(currentLevelIndex);
-            GUIscript.resetStats();
+            GetComponent<LevelManagerScript>().ReloadCurrentLevel();
         }
     }
 }
