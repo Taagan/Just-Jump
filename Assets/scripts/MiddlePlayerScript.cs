@@ -21,15 +21,14 @@ public class MiddlePlayerScript : MonoBehaviour
     }
     private void OnCollisionStay2D(Collision2D collision)
     {
+            canJump = true;
         if (collision.gameObject.tag == "BottomPlayer")
         {
             syncJump = true;
-            canJump = true;
         }
         //Kommer endast användas om man vill att kuberna inte ska hoppa tsm såvida de är connectade;
         if (collision.gameObject.tag == "Ground")
         {
-            canJump = true;
             syncJump = false;
         }
     }

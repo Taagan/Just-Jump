@@ -17,6 +17,7 @@ public class MovementPlayer : MonoBehaviour
     // Use this for initialization
     void Start()
     {
+        speedCopy = speed;
         rbBottom = playerBottom.GetComponent<Rigidbody2D>();
         rbMiddle = playerMiddle.GetComponent<Rigidbody2D>();
         rbTop = playerTop.GetComponent<Rigidbody2D>();
