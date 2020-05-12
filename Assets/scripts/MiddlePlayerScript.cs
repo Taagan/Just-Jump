@@ -32,14 +32,14 @@ public class MiddlePlayerScript : MonoBehaviour
             syncJump = false;
         }
     }
-    //private void OnCollisionExit2D(Collision2D collision)
-    //{
-    //    syncJump = true;
-    //    canJump = false;
-    //}
+    private void OnCollisionExit2D(Collision2D collision)
+    {
+        syncJump = true;
+        //canJump = false;
+    }
     public void Animation()
     {
-        gameObject.GetComponentInChildren<AnimationScript>().PlayAnimation();
+        //gameObject.GetComponentInChildren<AnimationScript>().PlayAnimation();
     }
 
 }
