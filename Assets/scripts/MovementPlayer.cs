@@ -55,7 +55,7 @@ public class MovementPlayer : MonoBehaviour
         rbBottom.velocity = new Vector2(speed, rbBottom.velocity.y);
         speedCopy = speed;
 
-       rbGameMaster.velocity = new Vector2(speed, 0);
+       //rbGameMaster.velocity = new Vector2(speed, 0);
         switch (mode)
         {
             case Mode.normal:
@@ -74,7 +74,7 @@ public class MovementPlayer : MonoBehaviour
     }
     private void Jump(Rigidbody2D rb)
     {
-        rb.velocity = new Vector2(speed, jumpForce);    //speed blir horizentala vikeln
+        rb.velocity = new Vector2(speed, jumpForce);    //speed blir horizentala vikeln       
     }
 
     private void BoostedJump()

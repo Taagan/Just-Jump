@@ -32,7 +32,10 @@ public class PathFollowerScript : MonoBehaviour
         {
             decimalOfWayThere -= 1.0f;
             SetNextPath(targetPoint.position, pathParent.GetChild(index + 1).position);
+
         }
+
+
         GetComponent<Rigidbody2D>().position = Vector3.Lerp(targetPoint.position, pathParent.GetChild(index + 1).transform.position, decimalOfWayThere);
     }
 
