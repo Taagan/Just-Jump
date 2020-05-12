@@ -30,6 +30,8 @@ public class PathFollowerScript : MonoBehaviour
         decimalOfWayThere += Time.deltaTime * speed * speedFactor;
         if (decimalOfWayThere >= 1.0f)
         {
+            index++;
+            targetPoint = pathParent.GetChild(index);
             decimalOfWayThere -= 1.0f;
             SetNextPath(targetPoint.position, pathParent.GetChild(index + 1).position);
         }
