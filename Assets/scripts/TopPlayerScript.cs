@@ -36,15 +36,15 @@ public class TopPlayerScript : MonoBehaviour
 
 
     //DET E DENNA SOM GÖR ATT DUBBELHOPP INTE SKER; MEN DEN DÖDAR OXÅ HOPP OM ETT SPELAROBJEKT LANDAR PÄ DET HOPPANDE SPELAROBJEKTET.
-    //private void OnCollisionExit2D(Collision2D collision)
-    //{
-    //    syncJump = true;
-    //    canJump = false;
-    //}
+    private void OnCollisionExit2D(Collision2D collision)
+    {
+        syncJump = true;
+        //canJump = false;
+    }
 
     public void Animation()
     {
-        gameObject.GetComponentInChildren<AnimationScript>().PlayAnimation();
+        //gameObject.GetComponentInChildren<AnimationScript>().PlayAnimation();
     }
 
    

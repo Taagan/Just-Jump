@@ -137,8 +137,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 951e9685fa5f3754690f37ad7bad9ee6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  m_Name:
+  m_EditorClassIdentifier:
   active: 1
 --- !u!1 &157461324 stripped
 GameObject:
@@ -173,32 +173,32 @@ PrefabInstance:
     - target: {fileID: 5904762388533352793, guid: ad3fd93962b15954fb9dc660274ef759,
         type: 3}
       propertyPath: playerTop
-      value: 
+      value:
       objectReference: {fileID: 1482949271}
     - target: {fileID: 5904762388533352793, guid: ad3fd93962b15954fb9dc660274ef759,
         type: 3}
       propertyPath: playerMiddle
-      value: 
+      value:
       objectReference: {fileID: 157461324}
     - target: {fileID: 5904762388533352793, guid: ad3fd93962b15954fb9dc660274ef759,
         type: 3}
       propertyPath: playerBottom
-      value: 
+      value:
       objectReference: {fileID: 1024117167}
     - target: {fileID: 5904762388533352793, guid: ad3fd93962b15954fb9dc660274ef759,
         type: 3}
       propertyPath: bottomSprite
-      value: 
+      value:
       objectReference: {fileID: 210599948}
     - target: {fileID: 5904762388533352793, guid: ad3fd93962b15954fb9dc660274ef759,
         type: 3}
       propertyPath: middleSprite
-      value: 
+      value:
       objectReference: {fileID: 571910950}
     - target: {fileID: 5904762388533352793, guid: ad3fd93962b15954fb9dc660274ef759,
         type: 3}
       propertyPath: topSprite
-      value: 
+      value:
       objectReference: {fileID: 1491160366}
     - target: {fileID: 5904762388533352793, guid: ad3fd93962b15954fb9dc660274ef759,
         type: 3}
@@ -268,7 +268,7 @@ PrefabInstance:
     - target: {fileID: 5904762388923015438, guid: ad3fd93962b15954fb9dc660274ef759,
         type: 3}
       propertyPath: m_audioClip
-      value: 
+      value:
       objectReference: {fileID: 8300000, guid: f3d81c7d03093f149aa1d2877c219ced, type: 3}
     - target: {fileID: 5904762388923015438, guid: ad3fd93962b15954fb9dc660274ef759,
         type: 3}
@@ -379,8 +379,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9d28dc69200b3a24ca5533120084b95d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  m_Name:
+  m_EditorClassIdentifier:
   timer: 0
   text: {fileID: 1715672947}
 --- !u!1 &1482949271 stripped
@@ -6133,8 +6133,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  m_Name:
+  m_EditorClassIdentifier:
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1

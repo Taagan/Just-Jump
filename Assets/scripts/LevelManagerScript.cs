@@ -25,7 +25,6 @@ public class LevelManagerScript : MonoBehaviour
     public bool inLevelSelect;
     private float startTime;
 
-    GameObject gameMaster;
     // Start is called before the first frame update
     void Start()
     {
@@ -45,7 +44,7 @@ public class LevelManagerScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        float currentSpeed = gameMaster.GetComponent<MovementPlayer>().speed;
+        float currentSpeed = GetComponent<MovementPlayer>().speed;
         if (!inLevelSelect)
         {
             float distCovered = (Time.time - startTime) * currentSpeed;

@@ -121,6 +121,12 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &79306602 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3580018004454203868, guid: c35c01e64ec2c244da538cc0ec0a56bd,
+    type: 3}
+  m_PrefabInstance: {fileID: 986253445}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &163512404
 GameObject:
   m_ObjectHideFlags: 0
@@ -176,14 +182,6 @@ CompositeCollider2D:
   m_ColliderPaths:
   - m_Collider: {fileID: 163512408}
     m_ColliderPaths:
-    - - X: 3110000128
-        Y: 70000000
-      - X: 3100000000
-        Y: 70000000
-      - X: 3100000000
-        Y: 60000000
-      - X: 3110000128
-        Y: 60000000
     - - X: 2300000000
         Y: 40000000
       - X: 2329999872
@@ -232,13 +230,13 @@ CompositeCollider2D:
         Y: 30000000
       - X: 2300000000
         Y: 30000000
-    - - X: 3260000000
+    - - X: 3110000128
         Y: 70000000
-      - X: 3249999872
+      - X: 3100000000
         Y: 70000000
-      - X: 3249999872
+      - X: 3100000000
         Y: 60000000
-      - X: 3260000000
+      - X: 3110000128
         Y: 60000000
     - - X: 3609999872
         Y: 40000000
@@ -350,13 +348,25 @@ CompositeCollider2D:
         Y: 30000000
       - X: 2880000000
         Y: 20000000
-      - X: 2830000128
+      - X: 2830000228
         Y: 20000000
-      - X: 2830000128
-        Y: 30000000
-      - X: 2820000000
-        Y: 30000000
-      - X: 2820000000
+      - X: 2830000228
+        Y: 19999959
+      - X: 2830000169
+        Y: 19999900
+      - X: 2819999959
+        Y: 19999900
+      - X: 2819999900
+        Y: 19999959
+      - X: 2819999900
+        Y: 30000041
+      - X: 2819999959
+        Y: 30000100
+      - X: 2809999831
+        Y: 30000100
+      - X: 2809999772
+        Y: 30000041
+      - X: 2809999772
         Y: 20000000
       - X: 2689999872
         Y: 20000000
@@ -766,9 +776,25 @@ CompositeCollider2D:
         Y: -10000000
       - X: 150000000
         Y: -20000000
-      - X: -10000000
+      - X: -9999900
         Y: -20000000
-      - X: -10000000
+      - X: -9999900
+        Y: -19999959
+      - X: -9999959
+        Y: -19999900
+      - X: -20000041
+        Y: -19999900
+      - X: -20000100
+        Y: -19999959
+      - X: -20000100
+        Y: -30000041
+      - X: -20000041
+        Y: -30000100
+      - X: -9999959
+        Y: -30000100
+      - X: -9999900
+        Y: -30000041
+      - X: -9999900
         Y: -30000000
       - X: 2920000000
         Y: -30000000
@@ -794,10 +820,6 @@ CompositeCollider2D:
         Y: -90000000
   m_CompositePaths:
     m_Paths:
-    - - {x: 325.99997, y: 6}
-      - {x: 325.99997, y: 7}
-      - {x: 325, y: 6.9999704}
-      - {x: 325.00003, y: 6}
     - - {x: 311, y: 6}
       - {x: 311, y: 7}
       - {x: 310, y: 6.9999704}
@@ -882,10 +904,10 @@ CompositeCollider2D:
       - {x: 288.99997, y: 3}
       - {x: 288, y: 2.999971}
       - {x: 287.99997, y: 2}
-      - {x: 283.00003, y: 2.0000293}
-      - {x: 283, y: 3}
-      - {x: 282, y: 2.999971}
-      - {x: 281.99997, y: 2}
+      - {x: 282, y: 2.0000253}
+      - {x: 281.99997, y: 3.00001}
+      - {x: 281, y: 2.9999747}
+      - {x: 280.99994, y: 2}
       - {x: 269, y: 2.0000293}
       - {x: 268.99997, y: 3}
       - {x: 268, y: 2.999971}
@@ -1090,8 +1112,8 @@ CompositeCollider2D:
       - {x: 15.999971, y: -1}
       - {x: 15, y: -1.0000293}
       - {x: 14.999971, y: -2}
-      - {x: -1, y: -2.0000293}
-      - {x: -0.99997073, y: -3}
+      - {x: -2.00001, y: -2.0000253}
+      - {x: -1.9999748, y: -3.00001}
       - {x: 292, y: -3.0000293}
       - {x: 292.00003, y: -4}
     - - {x: 363.99997, y: -9}
@@ -4501,6 +4523,15 @@ Tilemap:
       m_TileObjectToInstantiateIndex: 65535
       m_AllTileFlags: 2147483649
   - first: {x: 325, y: -4, z: 0}
+    second:
+      serializedVersion: 2
+      m_TileIndex: 0
+      m_TileSpriteIndex: 0
+      m_TileMatrixIndex: 0
+      m_TileColorIndex: 0
+      m_TileObjectToInstantiateIndex: 65535
+      m_AllTileFlags: 2147483649
+  - first: {x: -2, y: -3, z: 0}
     second:
       serializedVersion: 2
       m_TileIndex: 0
@@ -10071,7 +10102,7 @@ Tilemap:
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
       m_AllTileFlags: 2147483649
-  - first: {x: 282, y: 2, z: 0}
+  - first: {x: 281, y: 2, z: 0}
     second:
       serializedVersion: 2
       m_TileIndex: 0
@@ -10638,15 +10669,6 @@ Tilemap:
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
       m_AllTileFlags: 2147483649
-  - first: {x: 325, y: 6, z: 0}
-    second:
-      serializedVersion: 2
-      m_TileIndex: 0
-      m_TileSpriteIndex: 0
-      m_TileMatrixIndex: 0
-      m_TileColorIndex: 0
-      m_TileObjectToInstantiateIndex: 65535
-      m_AllTileFlags: 2147483649
   m_AnimatedTiles: {}
   m_TileAssetArray:
   - m_RefCount: 1050
@@ -11026,6 +11048,21 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3580018004510293176, guid: c35c01e64ec2c244da538cc0ec0a56bd,
+        type: 3}
+      propertyPath: pauseMenuParent
+      value: 
+      objectReference: {fileID: 79306602}
+    - target: {fileID: 3580018004510293176, guid: c35c01e64ec2c244da538cc0ec0a56bd,
+        type: 3}
+      propertyPath: WinMenuParent
+      value: 
+      objectReference: {fileID: 2129247294}
+    - target: {fileID: 3580018004510293176, guid: c35c01e64ec2c244da538cc0ec0a56bd,
+        type: 3}
+      propertyPath: LoseMenuParent
+      value: 
+      objectReference: {fileID: 2025996797}
     - target: {fileID: 3580018004510293177, guid: c35c01e64ec2c244da538cc0ec0a56bd,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -11296,7 +11333,7 @@ PrefabInstance:
     - target: {fileID: 6500537322891647931, guid: 536928651b2070a488c61a8d1dfd8d12,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -0.6
       objectReference: {fileID: 0}
     - target: {fileID: 6500537322891647931, guid: 536928651b2070a488c61a8d1dfd8d12,
         type: 3}
@@ -11576,6 +11613,12 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 1287481620}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &2025996797 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3580018005212697487, guid: c35c01e64ec2c244da538cc0ec0a56bd,
+    type: 3}
+  m_PrefabInstance: {fileID: 986253445}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &2072427583 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3580018003457526823, guid: c35c01e64ec2c244da538cc0ec0a56bd,
@@ -11588,3 +11631,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &2129247294 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3580018005423316175, guid: c35c01e64ec2c244da538cc0ec0a56bd,
+    type: 3}
+  m_PrefabInstance: {fileID: 986253445}
+  m_PrefabAsset: {fileID: 0}

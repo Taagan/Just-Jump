@@ -17,6 +17,7 @@ public class MovementPlayer : MonoBehaviour
     // Use this for initialization
     void Start()
     {
+        speedCopy = speed;
         rbBottom = playerBottom.GetComponent<Rigidbody2D>();
         rbMiddle = playerMiddle.GetComponent<Rigidbody2D>();
         rbTop = playerTop.GetComponent<Rigidbody2D>();
@@ -87,7 +88,6 @@ public class MovementPlayer : MonoBehaviour
                 if (playerTop.GetComponent<TopPlayerScript>().syncJump == true && playerMiddle.GetComponent<MiddlePlayerScript>().syncJump == true)
                 {
                     Jump(rbTop);
-
                 }
                 if (playerMiddle.GetComponent<MiddlePlayerScript>().syncJump == true)
                 {
@@ -99,7 +99,10 @@ public class MovementPlayer : MonoBehaviour
             }
             else if (playerMiddle.GetComponent<MiddlePlayerScript>().canJump == true && playerTop.GetComponent<TopPlayerScript>().canJump == false)
             {
-                Jump(rbMiddle);
+                if (playerMiddle.GetComponent<MiddlePlayerScript>().syncJump == true)
+                {
+                    Jump(rbMiddle);
+                }
                 Jump(rbBottom);
                 GUIscript.jumpCounterBottom++;
                 playerBottom.GetComponent<BottomPlayerScript>().canJump = false;
