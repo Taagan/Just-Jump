@@ -26,16 +26,14 @@ public class PathFollowerScript : MonoBehaviour
     void FixedUpdate()
     {
         speed = MovementPlayer.speedCopy;
-
         decimalOfWayThere += Time.deltaTime * speed * speedFactor;
         if (decimalOfWayThere >= 1.0f)
         {
+            index++;
+            targetPoint = pathParent.GetChild(index);
             decimalOfWayThere -= 1.0f;
             SetNextPath(targetPoint.position, pathParent.GetChild(index + 1).position);
-
         }
-
-
         GetComponent<Rigidbody2D>().position = Vector3.Lerp(targetPoint.position, pathParent.GetChild(index + 1).transform.position, decimalOfWayThere);
     }
 

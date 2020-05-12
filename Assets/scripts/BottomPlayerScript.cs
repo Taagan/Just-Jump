@@ -43,12 +43,18 @@ public class BottomPlayerScript : MonoBehaviour
         if (jumpCD)
         {
             timer++;
-            if (timer >= 10)
+            if (timer >= 1)
             {
                 jumpCD = false;
             }
         }
     }
+
+    public void CheckMiddlePlayer()
+    {
+
+    }
+
 
     public void Animation()
     {

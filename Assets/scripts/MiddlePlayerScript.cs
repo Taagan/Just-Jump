@@ -25,7 +25,6 @@ public class MiddlePlayerScript : MonoBehaviour
         if (collision.gameObject.tag == "BottomPlayer")
         {
             gameObject.GetComponent<Rigidbody>().velocity = collision.gameObject.GetComponent<Rigidbody>().velocity;
-
         }
     }
     private void OnCollisionStay2D(Collision2D collision)
