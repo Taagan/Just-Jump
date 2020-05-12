@@ -453,7 +453,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 590391431}
         m_MethodName: LoadLevel
         m_Mode: 3
         m_Arguments:
@@ -1228,6 +1228,18 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 519470191}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &590391431 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5904762388533352795, guid: ad3fd93962b15954fb9dc660274ef759,
+    type: 3}
+  m_PrefabInstance: {fileID: 1410898039}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 215959a90cdbf25479b10f5c589466ad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &629630972
 GameObject:
   m_ObjectHideFlags: 0

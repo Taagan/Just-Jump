@@ -121,6 +121,12 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &79306602 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3580018004454203868, guid: c35c01e64ec2c244da538cc0ec0a56bd,
+    type: 3}
+  m_PrefabInstance: {fileID: 986253445}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &163512404
 GameObject:
   m_ObjectHideFlags: 0
@@ -11026,6 +11032,21 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3580018004510293176, guid: c35c01e64ec2c244da538cc0ec0a56bd,
+        type: 3}
+      propertyPath: pauseMenuParent
+      value: 
+      objectReference: {fileID: 79306602}
+    - target: {fileID: 3580018004510293176, guid: c35c01e64ec2c244da538cc0ec0a56bd,
+        type: 3}
+      propertyPath: WinMenuParent
+      value: 
+      objectReference: {fileID: 2129247294}
+    - target: {fileID: 3580018004510293176, guid: c35c01e64ec2c244da538cc0ec0a56bd,
+        type: 3}
+      propertyPath: LoseMenuParent
+      value: 
+      objectReference: {fileID: 2025996797}
     - target: {fileID: 3580018004510293177, guid: c35c01e64ec2c244da538cc0ec0a56bd,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -11576,6 +11597,12 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 1287481620}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &2025996797 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3580018005212697487, guid: c35c01e64ec2c244da538cc0ec0a56bd,
+    type: 3}
+  m_PrefabInstance: {fileID: 986253445}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &2072427583 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3580018003457526823, guid: c35c01e64ec2c244da538cc0ec0a56bd,
@@ -11588,3 +11615,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &2129247294 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3580018005423316175, guid: c35c01e64ec2c244da538cc0ec0a56bd,
+    type: 3}
+  m_PrefabInstance: {fileID: 986253445}
+  m_PrefabAsset: {fileID: 0}
