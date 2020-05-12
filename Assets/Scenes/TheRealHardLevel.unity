@@ -143,17 +143,17 @@ PrefabInstance:
     - target: {fileID: 3580018004510293176, guid: c35c01e64ec2c244da538cc0ec0a56bd,
         type: 3}
       propertyPath: pauseMenuParent
-      value: 
+      value:
       objectReference: {fileID: 1547916724}
     - target: {fileID: 3580018004510293176, guid: c35c01e64ec2c244da538cc0ec0a56bd,
         type: 3}
       propertyPath: WinMenuParent
-      value: 
+      value:
       objectReference: {fileID: 1592644105}
     - target: {fileID: 3580018004510293176, guid: c35c01e64ec2c244da538cc0ec0a56bd,
         type: 3}
       propertyPath: LoseMenuParent
-      value: 
+      value:
       objectReference: {fileID: 112238528}
     - target: {fileID: 3580018004510293177, guid: c35c01e64ec2c244da538cc0ec0a56bd,
         type: 3}
@@ -5011,32 +5011,32 @@ PrefabInstance:
     - target: {fileID: 5904762388533352793, guid: ad3fd93962b15954fb9dc660274ef759,
         type: 3}
       propertyPath: playerBottom
-      value: 
+      value:
       objectReference: {fileID: 1154594590}
     - target: {fileID: 5904762388533352793, guid: ad3fd93962b15954fb9dc660274ef759,
         type: 3}
       propertyPath: playerMiddle
-      value: 
+      value:
       objectReference: {fileID: 1172331444}
     - target: {fileID: 5904762388533352793, guid: ad3fd93962b15954fb9dc660274ef759,
         type: 3}
       propertyPath: playerTop
-      value: 
+      value:
       objectReference: {fileID: 923302389}
     - target: {fileID: 5904762388533352793, guid: ad3fd93962b15954fb9dc660274ef759,
         type: 3}
       propertyPath: bottomSprite
-      value: 
+      value:
       objectReference: {fileID: 239317763}
     - target: {fileID: 5904762388533352793, guid: ad3fd93962b15954fb9dc660274ef759,
         type: 3}
       propertyPath: middleSprite
-      value: 
+      value:
       objectReference: {fileID: 1446145242}
     - target: {fileID: 5904762388533352793, guid: ad3fd93962b15954fb9dc660274ef759,
         type: 3}
       propertyPath: topSprite
-      value: 
+      value:
       objectReference: {fileID: 801751444}
     - target: {fileID: 5904762388533352794, guid: ad3fd93962b15954fb9dc660274ef759,
         type: 3}
@@ -5096,7 +5096,7 @@ PrefabInstance:
     - target: {fileID: 5904762388923015438, guid: ad3fd93962b15954fb9dc660274ef759,
         type: 3}
       propertyPath: m_audioClip
-      value: 
+      value:
       objectReference: {fileID: 8300000, guid: 3732a53764823a941aff15d4a488bdb8, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ad3fd93962b15954fb9dc660274ef759, type: 3}
