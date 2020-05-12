@@ -74,10 +74,9 @@ public class LevelManagerScript : MonoBehaviour
 
     public void ReloadCurrentLevel()
     {
-
         SceneManager.LoadScene(currentLevelIndex);
+        
         GUIscript.resetStats();
-
     }
 
     public static void ReloadCurrentUsingStatic()

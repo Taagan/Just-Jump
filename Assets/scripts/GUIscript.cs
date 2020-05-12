@@ -122,10 +122,10 @@ public class GUIscript : MonoBehaviour
 
     public static void resetStats()
     {
-        GUIscript.coinsTaken = 0;
-        GUIscript.jumpCounterBottom = 0;
-        GUIscript.jumpCounterMiddle = 0;
-        GUIscript.jumpCounterTop = 0;       
+        coinsTaken = 0;
+        jumpCounterBottom = 0;
+        jumpCounterMiddle = 0;
+        jumpCounterTop = 0;       
     }
 
     private void updateColorOnText(Color c)
