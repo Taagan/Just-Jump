@@ -24,7 +24,7 @@ public class MiddlePlayerScript : MonoBehaviour
         }
         if (collision.gameObject.tag == "BottomPlayer")
         {
-            gameObject.GetComponent<Rigidbody>().velocity = collision.gameObject.GetComponent<Rigidbody>().velocity;
+            gameObject.GetComponent<Rigidbody2D>().velocity = collision.gameObject.GetComponent<Rigidbody2D>().velocity;
         }
     }
     private void OnCollisionStay2D(Collision2D collision)
@@ -34,7 +34,7 @@ public class MiddlePlayerScript : MonoBehaviour
         {
             syncJump = true;
             canJump = true;
-            gameObject.GetComponent<Rigidbody>().velocity = collision.gameObject.GetComponent<Rigidbody>().velocity;
+            gameObject.GetComponent<Rigidbody2D>().velocity = collision.gameObject.GetComponent<Rigidbody2D>().velocity;
         }
         //Kommer endast användas om man vill att kuberna inte ska hoppa tsm såvida de är connectade;
         if (collision.gameObject.tag == "Ground")
