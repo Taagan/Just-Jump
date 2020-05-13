@@ -29,7 +29,6 @@ public class PathFollowerScript : MonoBehaviour
     void FixedUpdate()
     {
         speed = MovementPlayer.speedCopy;
-
         decimalOfWayThere += Time.deltaTime * speed * speedFactor;
         if (decimalOfWayThere >= 1.0f)
         {
