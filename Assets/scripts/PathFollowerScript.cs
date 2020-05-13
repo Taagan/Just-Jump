@@ -7,14 +7,17 @@ using UnityEngine;
 public class PathFollowerScript : MonoBehaviour
 {
    public Transform pathParent;
+    
     int index;
     Transform targetPoint;
     float speed = MovementPlayer.speedCopy;
     float decimalOfWayThere;
     float speedFactor;
+    Rigidbody2D rb;
     // Start is called before the first frame update
     void Awake()
     {
+        rb = GetComponent<Rigidbody2D>();
         speed = MovementPlayer.speedCopy;
         speedFactor = 1;
         index = 0;
@@ -35,7 +38,8 @@ public class PathFollowerScript : MonoBehaviour
             decimalOfWayThere -= 1.0f;
             SetNextPath(targetPoint.position, pathParent.GetChild(index + 1).position);
         }
-        GetComponent<Rigidbody2D>().position = Vector3.Lerp(targetPoint.position, pathParent.GetChild(index + 1).transform.position, decimalOfWayThere);
+        Vector2 yAxisVec = Vector3.Lerp(targetPoint.position, pathParent.GetChild(index + 1).transform.position, decimalOfWayThere);
+        rb.position = new Vector2(gameObject.transform.position.x, yAxisVec.y);
     }
 
     void OnDrawGizmos()
