@@ -9,7 +9,10 @@ public class HitboxPlayer : MonoBehaviour
 {
     private void OnTriggerEnter2D(Collider2D collision)
     {
-
+        if (collision.gameObject.tag == "BottomPlayerFriendHitBox")
+        {
+            Debug.Log("S entered D's domain");
+        }
         if (collision.gameObject.tag == "BonusPoint")
         {
             collision.gameObject.GetComponent<SoundEffectCode>().PlaySoundEffect();
@@ -23,6 +26,7 @@ public class HitboxPlayer : MonoBehaviour
         {
             SceneManager.LoadScene(3);
         }
+
         else if (collision.gameObject.tag != "TopPlayer" && collision.gameObject.tag != "MiddlePlayer" && collision.gameObject.tag != "BottomPlayer" && collision.gameObject.tag!="Player" && collision.gameObject.tag != "SafeBlock" && collision.gameObject.tag !="JumpRefresh")
         {
             //SceneManager.LoadScene(0);
