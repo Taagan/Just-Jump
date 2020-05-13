@@ -44,14 +44,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e9f6a1485035e5a44a55c499d674ab59, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Name: 
+  m_EditorClassIdentifier: 
   playerTop: {fileID: 0}
   playerMiddle: {fileID: 0}
   playerBottom: {fileID: 0}
+  bottomSprite: {fileID: 0}
+  middleSprite: {fileID: 0}
+  topSprite: {fileID: 0}
   speed: 7
   jumpForce: 18
-  BoostMode: 1
+  mode: 0
 --- !u!50 &5904762388533352792
 Rigidbody2D:
   serializedVersion: 4
@@ -83,8 +86,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 215959a90cdbf25479b10f5c589466ad, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Name: 
+  m_EditorClassIdentifier: 
   author: {fileID: 0}
   songTitle: {fileID: 0}
   percentageText: {fileID: 0}
@@ -93,9 +96,10 @@ MonoBehaviour:
   progressBarStartPosX: 0
   progressBarFinalPosX: 0
   totalSecondsInSong: 0
-  xSpeed: 0
+  progressBarXSpeed: 0
   distanceToTravel: 0
   endOfLevelMarker: {fileID: 0}
+  timer: {fileID: 0}
   inLevelSelect: 0
 --- !u!1 &5904762388923015436
 GameObject:
@@ -191,7 +195,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: e59f687cc21cb094e9ac90c9a8f39f04, type: 3}
+  m_audioClip: {fileID: 8300000, guid: f3d81c7d03093f149aa1d2877c219ced, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 0.192
   m_Pitch: 1
