@@ -10,6 +10,11 @@ public class TopPlayerScript : MonoBehaviour
     public bool jumpCD;
     private int timer = 0;
     // Start is called before the first frame update
+
+
+
+    public bool CanJump { get { return canJump; } set { canJump = value; } }
+
     void Start()
     {
         canJump = true;
@@ -34,14 +39,7 @@ public class TopPlayerScript : MonoBehaviour
            canJump = true;
         if (collision.gameObject.tag == "MiddlePlayer")
         {
-            syncJump = true;
-            middlePlayer.GetComponent<MiddlePlayerScript>().syncJump = true;
             gameObject.GetComponent<Rigidbody>().velocity = collision.gameObject.GetComponent<Rigidbody>().velocity;
-
-        }
-        else
-        {
-            syncJump = false;
         }
     }
 
@@ -50,6 +48,11 @@ public class TopPlayerScript : MonoBehaviour
     {
         syncJump = true;
         if (collision.gameObject.tag == "MiddlePlayer")
+        {
+            jumpCD = true;
+            canJump = false;
+        }
+        else if (collision.gameObject.tag == "Ground")
         {
             jumpCD = true;
             canJump = false;
