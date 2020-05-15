@@ -17,13 +17,6 @@ public class MiddlePlayerScript : MonoBehaviour
     {
         canJump = true;
         jumpCD = false;
-        touchingBottom = true;
-
-    }
-    private void Awake()
-    {
-        touchingBottom = true;
-
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -31,20 +24,18 @@ public class MiddlePlayerScript : MonoBehaviour
         {
             canJump = true;
         }
-        if (collision.gameObject.tag == "BottomPlayer")
-        {
-            gameObject.GetComponent<Rigidbody>().velocity = collision.gameObject.GetComponent<Rigidbody>().velocity;
-        }
-        if (collision.gameObject.transform.GetChild(2).gameObject.tag == "BottomPlayerFriendHitBox" && gameObject.transform.GetChild(2).gameObject.tag == "FriendlyHitBox")
-        {
-            touchingBottom = true;
-        }
-        if (collision.gameObject.transform.GetChild(2).gameObject.tag == "FriendlyHitBox" )
-        {
-            touchingTop = true;
-        }
-
-
+        //if (collision.gameObject.tag == "BottomPlayer")
+        //{
+        //    gameObject.GetComponent<Rigidbody2D>().velocity = collision.gameObject.GetComponent<Rigidbody2D>().velocity;
+        //}
+        //if (collision.gameObject.transform.GetChild(2).gameObject.tag == "BottomPlayerFriendHitBox" && gameObject.transform.GetChild(2).gameObject.tag == "FriendlyHitBox")
+        //{
+        //    touchingBottom = true;
+        //}
+        //if (collision.gameObject.transform.GetChild(2).gameObject.tag == "FriendlyHitBox")
+        //{
+        //    touchingTop = true;
+        //}
     }
     private void OnCollisionStay2D(Collision2D collision)
     {
@@ -68,15 +59,14 @@ public class MiddlePlayerScript : MonoBehaviour
             canJump = false;
 
         }
-        if (collision.gameObject.transform.GetChild(2).gameObject.tag == "FriendlyHitBox")
-        {
-            touchingTop = false;
-            Debug.Log(touchingBottom);
-        }
-        if (collision.gameObject.transform.GetChild(2).gameObject.tag == "BottomPlayerFriendHitBox")
-        {
-            touchingBottom = false;
-        }
+        //if (collision.gameObject.transform.GetChild(2).gameObject.tag == "FriendlyHitBox")
+        //{
+        //    touchingTop = false;
+        //}
+        //if (collision.gameObject.transform.GetChild(2).gameObject.tag == "BottomPlayerFriendHitBox")
+        //{
+        //    touchingBottom = false;
+        //}
     }
 
     private void Update()
