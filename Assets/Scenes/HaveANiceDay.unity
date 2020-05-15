@@ -121,6 +121,85 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1001 &99941767
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 960309437429048039, guid: f45c3eb814b57114787d68fe9d309621,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 960309437429048039, guid: f45c3eb814b57114787d68fe9d309621,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 960309437429048039, guid: f45c3eb814b57114787d68fe9d309621,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 960309437429048039, guid: f45c3eb814b57114787d68fe9d309621,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 960309437429048039, guid: f45c3eb814b57114787d68fe9d309621,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 960309437429048039, guid: f45c3eb814b57114787d68fe9d309621,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 960309437429048039, guid: f45c3eb814b57114787d68fe9d309621,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 960309437429048039, guid: f45c3eb814b57114787d68fe9d309621,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 960309437429048039, guid: f45c3eb814b57114787d68fe9d309621,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 960309437429048039, guid: f45c3eb814b57114787d68fe9d309621,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 960309437429048039, guid: f45c3eb814b57114787d68fe9d309621,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1089405684116224411, guid: f45c3eb814b57114787d68fe9d309621,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 300
+      objectReference: {fileID: 0}
+    - target: {fileID: 3050328670804381747, guid: f45c3eb814b57114787d68fe9d309621,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3991268996841670517, guid: f45c3eb814b57114787d68fe9d309621,
+        type: 3}
+      propertyPath: m_Name
+      value: pathParent
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: f45c3eb814b57114787d68fe9d309621, type: 3}
 --- !u!1 &157461324 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6500537321033266845, guid: 536928651b2070a488c61a8d1dfd8d12,
@@ -149,8 +228,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 021f34be2007b8547be5b57701484716, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  m_Name:
+  m_EditorClassIdentifier:
   pathParent: {fileID: 607753424}
 --- !u!1 &422682147 stripped
 GameObject:
@@ -7962,8 +8041,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9d28dc69200b3a24ca5533120084b95d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  m_Name:
+  m_EditorClassIdentifier:
   timer: 0
   text: {fileID: 1715672947}
 --- !u!1001 &1273893404
@@ -8246,32 +8325,32 @@ PrefabInstance:
     - target: {fileID: 5904762388533352793, guid: ad3fd93962b15954fb9dc660274ef759,
         type: 3}
       propertyPath: playerBottom
-      value: 
+      value:
       objectReference: {fileID: 1024117167}
     - target: {fileID: 5904762388533352793, guid: ad3fd93962b15954fb9dc660274ef759,
         type: 3}
       propertyPath: playerMiddle
-      value: 
+      value:
       objectReference: {fileID: 157461324}
     - target: {fileID: 5904762388533352793, guid: ad3fd93962b15954fb9dc660274ef759,
         type: 3}
       propertyPath: playerTop
-      value: 
+      value:
       objectReference: {fileID: 1482949271}
     - target: {fileID: 5904762388533352793, guid: ad3fd93962b15954fb9dc660274ef759,
         type: 3}
       propertyPath: bottomSprite
-      value: 
+      value:
       objectReference: {fileID: 210599948}
     - target: {fileID: 5904762388533352793, guid: ad3fd93962b15954fb9dc660274ef759,
         type: 3}
       propertyPath: middleSprite
-      value: 
+      value:
       objectReference: {fileID: 571910950}
     - target: {fileID: 5904762388533352793, guid: ad3fd93962b15954fb9dc660274ef759,
         type: 3}
       propertyPath: topSprite
-      value: 
+      value:
       objectReference: {fileID: 1491160366}
     - target: {fileID: 5904762388533352793, guid: ad3fd93962b15954fb9dc660274ef759,
         type: 3}
@@ -9746,8 +9825,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  m_Name:
+  m_EditorClassIdentifier:
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
@@ -9805,22 +9884,22 @@ PrefabInstance:
     - target: {fileID: 3580018004510293176, guid: c35c01e64ec2c244da538cc0ec0a56bd,
         type: 3}
       propertyPath: pauseMenuParent
-      value: 
+      value:
       objectReference: {fileID: 1833430263}
     - target: {fileID: 3580018004510293176, guid: c35c01e64ec2c244da538cc0ec0a56bd,
         type: 3}
       propertyPath: WinMenuParent
-      value: 
+      value:
       objectReference: {fileID: 422682147}
     - target: {fileID: 3580018004510293176, guid: c35c01e64ec2c244da538cc0ec0a56bd,
         type: 3}
       propertyPath: LoseMenuParent
-      value: 
+      value:
       objectReference: {fileID: 455595282}
     - target: {fileID: 3580018004510293176, guid: c35c01e64ec2c244da538cc0ec0a56bd,
         type: 3}
       propertyPath: winMenuReportCard
-      value: 
+      value:
       objectReference: {fileID: 1000318359}
     - target: {fileID: 3580018004510293177, guid: c35c01e64ec2c244da538cc0ec0a56bd,
         type: 3}

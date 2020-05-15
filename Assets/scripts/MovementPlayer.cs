@@ -11,8 +11,9 @@ public class MovementPlayer : MonoBehaviour
 
     public GameObject playerTop, playerMiddle, playerBottom,bottomSprite,middleSprite,topSprite;
     Rigidbody2D rbBottom, rbMiddle, rbTop, rbGameMaster;
-    public float speed, jumpForce;
+    public float speed, jumpForce,bufferTimerD,bufferTimerS,bufferTimerA;
     public static float speedCopy;
+    private bool jumpBufferActive,bottomBufferActive,middleBufferActive,topBufferActive;
     public Mode mode;
     // Use this for initialization
     void Start()
@@ -39,6 +40,7 @@ public class MovementPlayer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        BufferMechanic();
         speedCopy = speed;
         #region player alignment
         if (playerTop.transform.position.x != playerBottom.transform.position.x)
@@ -76,78 +78,149 @@ public class MovementPlayer : MonoBehaviour
     {
         rb.velocity = new Vector2(speed, jumpForce);    //speed blir horizentala vikeln       
     }
-
-    private void BoostedJump()
+    public void FullJump()
     {
-
-        if (Input.GetKeyDown(KeyCode.D) && playerBottom.GetComponent<BottomPlayerScript>().canJump == true)
+        if (playerBottom.GetComponent<BottomPlayerScript>().canJump)
         {
-            if (playerMiddle.GetComponent<MiddlePlayerScript>().canJump == true && playerTop.GetComponent<TopPlayerScript>().canJump == true)
+            if (playerMiddle.GetComponent<MiddlePlayerScript>().touchingBottom)
             {
-                ////För att göra så att de övre kuberna kan hoppa separat när de inte är connectade till kuben under. Funkar men blir problematiskt att klara av banan
-                if (playerTop.GetComponent<TopPlayerScript>().syncJump == true && playerMiddle.GetComponent<MiddlePlayerScript>().syncJump == true)
+                if (playerMiddle.GetComponent<MiddlePlayerScript>().touchingTop)
                 {
+                    Jump(rbBottom);
+                    Jump(rbMiddle);
                     Jump(rbTop);
-                }
-                if (playerMiddle.GetComponent<MiddlePlayerScript>().syncJump == true)
-                {
-                    Jump(rbMiddle);
-                }
-                GUIscript.jumpCounterBottom++;
-                Jump(rbBottom);
-                playerBottom.GetComponent<BottomPlayerScript>().canJump = false;
-            }
-            else if (playerMiddle.GetComponent<MiddlePlayerScript>().canJump == true && playerTop.GetComponent<TopPlayerScript>().canJump == false)
-            {
-                if (playerMiddle.GetComponent<MiddlePlayerScript>().syncJump == true)
-                {
-                    Jump(rbMiddle);
-                }
-                Jump(rbBottom);
-                GUIscript.jumpCounterBottom++;
-                playerBottom.GetComponent<BottomPlayerScript>().canJump = false;
 
+
+                    GUIscript.jumpCounterBottom++;
+                    playerBottom.GetComponent<BottomPlayerScript>().canJump = false;
+                }
+                else if(!playerMiddle.GetComponent<MiddlePlayerScript>().touchingTop)
+                {
+                    Jump(rbMiddle);
+                    Jump(rbBottom);
+                    GUIscript.jumpCounterBottom++;
+                    playerBottom.GetComponent<BottomPlayerScript>().canJump = false;
+                }
             }
-            else
+            else if (!playerMiddle.GetComponent<MiddlePlayerScript>().touchingBottom)
             {
                 Jump(rbBottom);
                 GUIscript.jumpCounterBottom++;
                 playerBottom.GetComponent<BottomPlayerScript>().canJump = false;
-
             }
         }
-
-        if (Input.GetKeyDown(KeyCode.S) && playerMiddle.GetComponent<MiddlePlayerScript>().canJump == true)
+        else if (Input.GetKeyDown(KeyCode.D) && !playerBottom.GetComponent<BottomPlayerScript>().canJump)
         {
-            if (playerTop.GetComponent<TopPlayerScript>().canJump == true)
+            bottomBufferActive = true;
+        }
+    }
+    public void MiddleJump()
+    {
+        if (playerMiddle.GetComponent<MiddlePlayerScript>().canJump == true)
+        {
+            if (playerMiddle.GetComponent<MiddlePlayerScript>().touchingTop)
             {
-                if (playerTop.GetComponent<TopPlayerScript>().syncJump == true)
-                {
-                    Jump(rbTop);
-                    GUIscript.jumpCounterTop++;
-                }
+                Jump(rbTop);
                 Jump(rbMiddle);
                 GUIscript.jumpCounterMiddle++;
                 playerMiddle.GetComponent<MiddlePlayerScript>().canJump = false;
-                playerMiddle.GetComponent<MiddlePlayerScript>().syncJump = false;
             }
             else
             {
                 Jump(rbMiddle);
                 GUIscript.jumpCounterMiddle++;
                 playerMiddle.GetComponent<MiddlePlayerScript>().canJump = false;
-                playerMiddle.GetComponent<MiddlePlayerScript>().syncJump = false;
-                playerMiddle.GetComponent<MiddlePlayerScript>().Animation();
-            }
 
+            }
         }
-        if (Input.GetKeyDown(KeyCode.A) && playerTop.GetComponent<TopPlayerScript>().canJump == true)
+        else if (Input.GetKeyDown(KeyCode.S) && !playerMiddle.GetComponent<MiddlePlayerScript>().canJump)
+        {
+            middleBufferActive = true;
+        }
+    }
+    public void TopJump()
+    {
+        if (playerTop.GetComponent<TopPlayerScript>().canJump)
         {
             Jump(rbTop);
             GUIscript.jumpCounterTop++;
             playerTop.GetComponent<TopPlayerScript>().canJump = false;
-            playerTop.GetComponent<TopPlayerScript>().syncJump = false;
             playerTop.GetComponent<TopPlayerScript>().Animation();
         }
+        else if (Input.GetKeyDown(KeyCode.A) && !playerTop.GetComponent<TopPlayerScript>().canJump)
+        {
+            topBufferActive = true;
+        }
+    }
+    private void BoostedJump()
+    {
+        if (Input.GetKeyDown(KeyCode.D))
+        {
+            FullJump();
+        }
+        if (Input.GetKeyDown(KeyCode.S))
+        {
+            MiddleJump();
+
+        }
+        if (Input.GetKeyDown(KeyCode.A))
+        {
+            TopJump();
+        }
+    }
+    private void BufferMechanic()
+    {
+        
+        if (bottomBufferActive)
+        {
+            bufferTimerD++;
+            if (playerBottom.GetComponent<BottomPlayerScript>().canJump)
+            {
+                FullJump();
+                bottomBufferActive = false;
+                bufferTimerD = 0;
+            }
+            if (bufferTimerD >= 100)
+            {
+                bufferTimerD = 0;
+                bottomBufferActive = false;
+            }
+        }
+        if (middleBufferActive)
+        {
+            bufferTimerS++;
+            if (playerMiddle.GetComponent<MiddlePlayerScript>().canJump)
+            {
+                MiddleJump();
+                TopJump();
+                middleBufferActive = false;
+                bufferTimerS = 0;
+                Debug.Log("a");
+            }
+            if (bufferTimerS >= 100)
+            {
+                bufferTimerS = 0;
+                middleBufferActive = false;
+            }
+        }
+        if (topBufferActive)
+        {
+            bufferTimerS++;
+            if (playerTop.GetComponent<TopPlayerScript>().canJump)
+            {
+                TopJump();
+                topBufferActive = false;
+                bufferTimerS = 0;
+                Debug.Log("a");
+            }
+            if (bufferTimerA >= 100)
+            {
+                bufferTimerA = 0;
+                topBufferActive = false;
+            }
+        }
+
+
+
     }
 }

@@ -15,6 +15,7 @@ TagManager:
   - LevelEnd
   - JumpRefresh
   - BottomPlayerFriendHitBox
+  - FriendlyHitBox
   layers:
   - Default
   - TransparentFX
