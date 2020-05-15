@@ -20,11 +20,19 @@ public class BottomPlayerScript : MonoBehaviour
         {
             canJump = true;
         }
+        if (collision.gameObject.tag == "Ground")
+        {
+            canJump = true;
+        }
 
     }
     private void OnCollisionStay2D(Collision2D collision)
     {
-        if (collision.gameObject.tag == "Ground" && !canJump && !jumpCD)
+        if (collision.gameObject.tag == "Ground" && !canJump && !jumpCD )
+        {
+            canJump = true;
+        }
+        if (collision.gameObject.tag == "SafeBlock" && !canJump && !jumpCD)
         {
             canJump = true;
         }
@@ -43,7 +51,7 @@ public class BottomPlayerScript : MonoBehaviour
         if (jumpCD)
         {
             timer++;
-            if (timer >= 1)
+            if (timer >= 0)
             {
                 jumpCD = false;
             }
