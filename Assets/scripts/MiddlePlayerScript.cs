@@ -33,16 +33,16 @@ public class MiddlePlayerScript : MonoBehaviour
         }
         if (collision.gameObject.tag == "BottomPlayer")
         {
-            gameObject.GetComponent<Rigidbody>().velocity = collision.gameObject.GetComponent<Rigidbody>().velocity;
+            gameObject.GetComponent<Rigidbody2D>().velocity = collision.gameObject.GetComponent<Rigidbody2D>().velocity;
         }
-        if (collision.gameObject.transform.GetChild(2).gameObject.tag == "BottomPlayerFriendHitBox" && gameObject.transform.GetChild(2).gameObject.tag == "FriendlyHitBox")
-        {
-            touchingBottom = true;
-        }
-        if (collision.gameObject.transform.GetChild(2).gameObject.tag == "FriendlyHitBox" )
-        {
-            touchingTop = true;
-        }
+        //if (collision.gameObject.transform.GetChild(2).gameObject.tag == "BottomPlayerFriendHitBox" && gameObject.transform.GetChild(2).gameObject.tag == "FriendlyHitBox")
+        //{
+        //    touchingBottom = true;
+        //}
+        //if (collision.gameObject.transform.GetChild(2).gameObject.tag == "FriendlyHitBox" )
+        //{
+        //    touchingTop = true;
+        //}
 
 
     }
