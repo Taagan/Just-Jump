@@ -82,32 +82,31 @@ public class MovementPlayer : MonoBehaviour
     {
         if (playerBottom.GetComponent<BottomPlayerScript>().canJump)
         {
-            if (playerMiddle.GetComponent<MiddlePlayerScript>().touchingBottom)
-            {
-                if (playerMiddle.GetComponent<MiddlePlayerScript>().touchingTop)
-                {
-                    Jump(rbBottom);
-                    Jump(rbMiddle);
-                    Jump(rbTop);
+            //if (playerMiddle.GetComponent<MiddlePlayerScript>().touchingBottom)
+            //{
+                //if (playerMiddle.GetComponent<MiddlePlayerScript>().touchingTop)
+                //{
+                //    Jump(rbBottom);
+                //    Jump(rbMiddle);
+                //    Jump(rbTop);
 
 
-                    GUIscript.jumpCounterBottom++;
-                    playerBottom.GetComponent<BottomPlayerScript>().canJump = false;
-                }
-                else if(!playerMiddle.GetComponent<MiddlePlayerScript>().touchingTop)
-                {
-                    Jump(rbMiddle);
-                    Jump(rbBottom);
-                    GUIscript.jumpCounterBottom++;
-                    playerBottom.GetComponent<BottomPlayerScript>().canJump = false;
-                }
-            }
-            else if (!playerMiddle.GetComponent<MiddlePlayerScript>().touchingBottom)
-            {
+                //    GUIscript.jumpCounterBottom++;
+                //    playerBottom.GetComponent<BottomPlayerScript>().canJump = false;
+                //}
+                //else if(!playerMiddle.GetComponent<MiddlePlayerScript>().touchingTop)
+                //{
+                //    Jump(rbMiddle);
+                //    Jump(rbBottom);
+                //    GUIscript.jumpCounterBottom++;
+                //    playerBottom.GetComponent<BottomPlayerScript>().canJump = false;
+                //}
+                //}
+
                 Jump(rbBottom);
                 GUIscript.jumpCounterBottom++;
                 playerBottom.GetComponent<BottomPlayerScript>().canJump = false;
-            }
+            
         }
         else if (Input.GetKeyDown(KeyCode.D) && !playerBottom.GetComponent<BottomPlayerScript>().canJump)
         {
@@ -118,20 +117,20 @@ public class MovementPlayer : MonoBehaviour
     {
         if (playerMiddle.GetComponent<MiddlePlayerScript>().canJump == true)
         {
-            if (playerMiddle.GetComponent<MiddlePlayerScript>().touchingTop)
-            {
-                Jump(rbTop);
-                Jump(rbMiddle);
-                GUIscript.jumpCounterMiddle++;
-                playerMiddle.GetComponent<MiddlePlayerScript>().canJump = false;
-            }
-            else
-            {
-                Jump(rbMiddle);
-                GUIscript.jumpCounterMiddle++;
-                playerMiddle.GetComponent<MiddlePlayerScript>().canJump = false;
+            //if (playerMiddle.GetComponent<MiddlePlayerScript>().touchingTop)
+            //{
+            //    Jump(rbTop);
+            //    Jump(rbMiddle);
+            //    GUIscript.jumpCounterMiddle++;
+            //    playerMiddle.GetComponent<MiddlePlayerScript>().canJump = false;
+            //}
+            
+            
+            Jump(rbMiddle);
+            GUIscript.jumpCounterMiddle++;
+            playerMiddle.GetComponent<MiddlePlayerScript>().canJump = false;
 
-            }
+            
         }
         else if (Input.GetKeyDown(KeyCode.S) && !playerMiddle.GetComponent<MiddlePlayerScript>().canJump)
         {
