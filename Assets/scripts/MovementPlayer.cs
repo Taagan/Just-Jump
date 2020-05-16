@@ -8,14 +8,25 @@ public class MovementPlayer : MonoBehaviour
     {
         normal,debug
     }
-
+    
     public GameObject playerTop, playerMiddle, playerBottom,bottomSprite,middleSprite,topSprite;
     Rigidbody2D rbBottom, rbMiddle, rbTop, rbGameMaster;
     public float speed, jumpForce,bufferTimerD,bufferTimerS,bufferTimerA;
     public static float speedCopy;
     private bool jumpBufferActive,bottomBufferActive,middleBufferActive,topBufferActive;
     public Mode mode;
+    public bool gamepad;
+
+    PlayerController playercontroller;
     // Use this for initialization
+    private void Awake()
+    {
+        playercontroller = new PlayerController();
+        playercontroller.Gameplay.BottomJump.performed += ctx => FullJump();
+        playercontroller.Gameplay.MiddleJump.performed += ctx => MiddleJump();
+        playercontroller.Gameplay.TopJump.performed += ctx => TopJump();
+
+    }
     void Start()
     {
         speedCopy = speed;
@@ -82,27 +93,7 @@ public class MovementPlayer : MonoBehaviour
     {
         if (playerBottom.GetComponent<BottomPlayerScript>().canJump)
         {
-            //if (playerMiddle.GetComponent<MiddlePlayerScript>().touchingBottom)
-            //{
-                //if (playerMiddle.GetComponent<MiddlePlayerScript>().touchingTop)
-                //{
-                //    Jump(rbBottom);
-                //    Jump(rbMiddle);
-                //    Jump(rbTop);
-
-
-                //    GUIscript.jumpCounterBottom++;
-                //    playerBottom.GetComponent<BottomPlayerScript>().canJump = false;
-                //}
-                //else if(!playerMiddle.GetComponent<MiddlePlayerScript>().touchingTop)
-                //{
-                //    Jump(rbMiddle);
-                //    Jump(rbBottom);
-                //    GUIscript.jumpCounterBottom++;
-                //    playerBottom.GetComponent<BottomPlayerScript>().canJump = false;
-                //}
-                //}
-
+           
                 Jump(rbBottom);
                 GUIscript.jumpCounterBottom++;
                 playerBottom.GetComponent<BottomPlayerScript>().canJump = false;
@@ -153,19 +144,29 @@ public class MovementPlayer : MonoBehaviour
     }
     private void BoostedJump()
     {
-        if (Input.GetKeyDown(KeyCode.D))
+        if (Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.RightArrow))
         {
             FullJump();
         }
-        if (Input.GetKeyDown(KeyCode.S))
+        if (Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.DownArrow))
         {
             MiddleJump();
 
         }
-        if (Input.GetKeyDown(KeyCode.A))
+        if (Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.LeftArrow))
         {
             TopJump();
         }
+    }
+
+    private void OnEnable()
+    {
+        playercontroller.Enable();
+    }
+
+    private void OnDisable()
+    {
+        playercontroller.Disable();
     }
     private void BufferMechanic()
     {
