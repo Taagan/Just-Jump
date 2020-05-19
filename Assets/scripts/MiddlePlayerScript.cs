@@ -55,7 +55,7 @@ public class MiddlePlayerScript : MonoBehaviour
     { 
         if (collision.gameObject.tag == "BottomPlayer")
         {
-            jumpCD = true;
+            //jumpCD = true;
             canJump = false;
 
         }
