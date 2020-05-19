@@ -24,10 +24,10 @@ public class TopPlayerScript : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "MiddlePlayer")
-        {
-            gameObject.GetComponent<Rigidbody>().velocity = collision.gameObject.GetComponent<Rigidbody>().velocity;
-        }
+        //if (collision.gameObject.tag == "MiddlePlayer")
+        //{
+        //    gameObject.GetComponent<Rigidbody2D>().velocity = collision.gameObject.GetComponent<Rigidbody2D>().velocity;
+        //}
         if (collision.gameObject.tag == "JumpRefresh")
         {
             canJump = true;
@@ -37,10 +37,7 @@ public class TopPlayerScript : MonoBehaviour
     private void OnCollisionStay2D(Collision2D collision)
     {
            canJump = true;
-        if (collision.gameObject.tag == "MiddlePlayer")
-        {
-            gameObject.GetComponent<Rigidbody>().velocity = collision.gameObject.GetComponent<Rigidbody>().velocity;
-        }
+
     }
 
 
