@@ -17788,11 +17788,21 @@ PrefabInstance:
       propertyPath: endOfLevelMarker
       value: 
       objectReference: {fileID: 816287877}
+    - target: {fileID: 5904762388533352795, guid: ad3fd93962b15954fb9dc660274ef759,
+        type: 3}
+      propertyPath: inLevelSelect
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5904762388923015438, guid: ad3fd93962b15954fb9dc660274ef759,
         type: 3}
       propertyPath: m_audioClip
       value: 
       objectReference: {fileID: 8300000, guid: 3732a53764823a941aff15d4a488bdb8, type: 3}
+    - target: {fileID: 5904762388923015438, guid: ad3fd93962b15954fb9dc660274ef759,
+        type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5904762388923015664, guid: ad3fd93962b15954fb9dc660274ef759,
         type: 3}
       propertyPath: m_LocalRotation.x
@@ -18306,6 +18316,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pathParent: {fileID: 510682097}
+--- !u!114 &1847009522
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1847009516}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 15b60eead6c8dd8438c7ae9fc12c2f1e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  savedSongTimer: 0
+  savedPlayerPositionX: 0
+  savedPlayerPositionY: 0
+  bottomPlayer: {fileID: 1154594590}
 --- !u!4 &2052285191 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7182708340786805869, guid: 7a82d3870f340704b9c6462aec6e0355,
