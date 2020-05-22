@@ -6,20 +6,26 @@ using UnityEngine;
 public class SaveState : MonoBehaviour
 {
     public float savedSongTimer;
-    public float savedPlayerPositionX, savedPlayerPositionY;
-
+    public Vector3 bottomSavedPlayerPosition, middleSavedPlayerPosition, topSavedPlayerPosition;
+    Vector3 savedCameraPosition;
     float currentSongTime;
-    float currentPlayerPositionX, currentPlayerPositionY;
-    ulong playSongAt;
-    public GameObject bottomPlayer;
-    
+    Vector3 bottomCurrentPlayerPosition, middleCurrentPlayerPosition, topCurrentPlayerPosition;
+    public ulong delay;
+    public GameObject bottomPlayer,middlePlayer,topPlayer;
+    public Camera camera;
+    public AudioSource aS;
+    int savedCameraIndex;
     // Start is called before the first frame update
 
     private void Awake()
     {
+        savedCameraPosition = new Vector3(0, 0, -1);
+        bottomPlayer.gameObject.transform.position = new Vector2(bottomPlayer.gameObject.transform.position.x, bottomPlayer.gameObject.transform.position.y);
+        middlePlayer.gameObject.transform.position = new Vector2(middlePlayer.gameObject.transform.position.x, middlePlayer.gameObject.transform.position.y);
+        topPlayer.gameObject.transform.position = new Vector2(topPlayer.gameObject.transform.position.x, topPlayer.gameObject.transform.position.y);
         currentSongTime = savedSongTimer;
-        playSongAt = Convert.ToUInt64(savedSongTimer);
-        gameObject.GetComponentInChildren<AudioSource>().Play(playSongAt);
+        aS.time = savedSongTimer;
+        aS.Play(delay);
     }
 
     void Start()
@@ -30,22 +36,36 @@ public class SaveState : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        currentPlayerPositionX = bottomPlayer.gameObject.transform.position.x;
-        currentPlayerPositionY = bottomPlayer.gameObject.transform.position.y;
+        bottomCurrentPlayerPosition = bottomPlayer.gameObject.transform.position;
+        middleCurrentPlayerPosition = middlePlayer.gameObject.transform.position;
+        topCurrentPlayerPosition = topPlayer.gameObject.transform.position;
 
-        currentSongTime += Time.deltaTime;
+        currentSongTime += Time.deltaTime *44100;
         if (Input.GetKeyDown(KeyCode.O))
         {
+            bottomSavedPlayerPosition = bottomCurrentPlayerPosition;
+            middleSavedPlayerPosition = middleCurrentPlayerPosition;
+            topSavedPlayerPosition = topCurrentPlayerPosition;
             savedSongTimer = currentSongTime;
-            savedPlayerPositionX = currentPlayerPositionX;
-            savedPlayerPositionY = currentPlayerPositionY;
-
+            savedCameraPosition = camera.transform.position;
+            savedCameraIndex = camera.GetComponent<PathFollowerScript>().index;
         }
         if (Input.GetKeyDown(KeyCode.P))
         {
             savedSongTimer = 0;
-            savedPlayerPositionX = 0;
-            savedPlayerPositionY = 0;
         }
+    }
+
+    public void RestartFromSave()
+    {
+        currentSongTime = savedSongTimer;
+        bottomPlayer.transform.position = bottomSavedPlayerPosition;
+        middlePlayer.transform.position = middleSavedPlayerPosition;
+        topPlayer.transform.position = topSavedPlayerPosition;
+        camera.transform.position = savedCameraPosition;
+        camera.GetComponent<PathFollowerScript>().index = savedCameraIndex;
+        currentSongTime = savedSongTimer;
+        aS.time = savedSongTimer;
+        aS.Play(delay);
     }
 }

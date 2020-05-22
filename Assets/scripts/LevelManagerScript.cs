@@ -80,9 +80,10 @@ public class LevelManagerScript : MonoBehaviour
     }
 
     public static void ReloadCurrentUsingStatic()
-    {
+    {      
         SceneManager.LoadScene(currentLevelIndex);
         GUIscript.resetStats();
+        
     }
 
     public void GetCurrentSong()

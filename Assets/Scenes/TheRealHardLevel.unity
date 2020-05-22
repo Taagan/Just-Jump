@@ -17621,6 +17621,18 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 107990845}
   m_PrefabAsset: {fileID: 0}
+--- !u!82 &771937291 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 5904762388923015438, guid: ad3fd93962b15954fb9dc660274ef759,
+    type: 3}
+  m_PrefabInstance: {fileID: 1027436643}
+  m_PrefabAsset: {fileID: 0}
+--- !u!20 &771937293 stripped
+Camera:
+  m_CorrespondingSourceObject: {fileID: 5904762388923015439, guid: ad3fd93962b15954fb9dc660274ef759,
+    type: 3}
+  m_PrefabInstance: {fileID: 1027436643}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &780554294
 GameObject:
   m_ObjectHideFlags: 0
@@ -18316,6 +18328,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pathParent: {fileID: 510682097}
+  index: 0
 --- !u!114 &1847009522
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18329,9 +18342,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   savedSongTimer: 0
-  savedPlayerPositionX: 0
-  savedPlayerPositionY: 0
+  bottomSavedPlayerPosition: {x: 0, y: 0, z: 0}
+  middleSavedPlayerPosition: {x: 0, y: 0, z: 0}
+  topSavedPlayerPosition: {x: 0, y: 0, z: 0}
+  delay: 0
   bottomPlayer: {fileID: 1154594590}
+  middlePlayer: {fileID: 0}
+  topPlayer: {fileID: 0}
+  camera: {fileID: 771937293}
+  aS: {fileID: 771937291}
 --- !u!4 &2052285191 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7182708340786805869, guid: 7a82d3870f340704b9c6462aec6e0355,
@@ -18435,6 +18454,26 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3557327729992595111, guid: 536928651b2070a488c61a8d1dfd8d12,
+        type: 3}
+      propertyPath: m_UsedByComposite
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3557327730046445247, guid: 536928651b2070a488c61a8d1dfd8d12,
+        type: 3}
+      propertyPath: gameMaster
+      value: 
+      objectReference: {fileID: 1847009516}
+    - target: {fileID: 3557327730262719787, guid: 536928651b2070a488c61a8d1dfd8d12,
+        type: 3}
+      propertyPath: gameMaster
+      value: 
+      objectReference: {fileID: 1847009516}
+    - target: {fileID: 3557327730879609374, guid: 536928651b2070a488c61a8d1dfd8d12,
+        type: 3}
+      propertyPath: gameMaster
+      value: 
+      objectReference: {fileID: 1847009516}
     - target: {fileID: 3557327731319304544, guid: 536928651b2070a488c61a8d1dfd8d12,
         type: 3}
       propertyPath: m_Name

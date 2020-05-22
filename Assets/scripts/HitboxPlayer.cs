@@ -7,6 +7,8 @@ using System;
 
 public class HitboxPlayer : MonoBehaviour
 {
+    public GameObject gameMaster;
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.tag == "BonusPoint")
@@ -25,16 +27,20 @@ public class HitboxPlayer : MonoBehaviour
 
         else if (collision.gameObject.tag == "Ground")
         {
+            gameMaster.GetComponent<SaveState>().RestartFromSave();
+
             //SceneManager.LoadScene(0);
-            if (!MenuScript.instantRestart)
-            {
-                LevelManagerScript.ReloadCurrentUsingStatic();
-            }
-            else
-            {
-                Time.timeScale = 0;
-                GUIscript.ChangeStateOfGame(WinOrLose.lost);
-            }
+            //if (!MenuScript.instantRestart)
+            //{
+            //    //LevelManagerScript.ReloadCurrentUsingStatic();
+            //    GetComponent<SaveState>().RestartFromSave();
+
+            //}
+            //else
+            //{
+            //    Time.timeScale = 0;
+            //    GUIscript.ChangeStateOfGame(WinOrLose.lost);
+            //}
         }
     }
 

@@ -8,7 +8,7 @@ public class PathFollowerScript : MonoBehaviour
 {
    public Transform pathParent;
     
-    int index;
+    public int index;
     Transform targetPoint;
     float speed = MovementPlayer.speedCopy;
     float decimalOfWayThere;
