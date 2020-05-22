@@ -6,12 +6,12 @@ using UnityEngine;
 public class SaveState : MonoBehaviour
 {
     public float savedSongTimer;
-    public Vector3 bottomSavedPlayerPosition, middleSavedPlayerPosition, topSavedPlayerPosition;
+    public Vector3 bottomSavedPlayerPosition, middleSavedPlayerPosition, topSavedPlayerPosition,bottomStartPosition,middleStartPosition,topStartPosition, cameraStartPosition;
     Vector3 savedCameraPosition;
-    float currentSongTime;
+    float currentSongTime,pathTraveled,pathTraveledStartValue;
     Vector3 bottomCurrentPlayerPosition, middleCurrentPlayerPosition, topCurrentPlayerPosition;
     public ulong delay;
-    public GameObject bottomPlayer,middlePlayer,topPlayer;
+    public GameObject bottomPlayer,middlePlayer,topPlayer, gameMaster;
     public Camera camera;
     public AudioSource aS;
     int savedCameraIndex;
@@ -19,10 +19,11 @@ public class SaveState : MonoBehaviour
 
     private void Awake()
     {
-        savedCameraPosition = new Vector3(0, 0, -1);
-        bottomPlayer.gameObject.transform.position = new Vector2(bottomPlayer.gameObject.transform.position.x, bottomPlayer.gameObject.transform.position.y);
-        middlePlayer.gameObject.transform.position = new Vector2(middlePlayer.gameObject.transform.position.x, middlePlayer.gameObject.transform.position.y);
-        topPlayer.gameObject.transform.position = new Vector2(topPlayer.gameObject.transform.position.x, topPlayer.gameObject.transform.position.y);
+        cameraStartPosition = gameMaster.transform.position;
+        pathTraveledStartValue = gameMaster.GetComponent<PathFollowerScript>().decimalOfWayThere;
+        bottomStartPosition = new Vector2(bottomPlayer.gameObject.transform.position.x, bottomPlayer.gameObject.transform.position.y);
+        middleStartPosition = new Vector2(middlePlayer.gameObject.transform.position.x, middlePlayer.gameObject.transform.position.y);
+        topStartPosition = new Vector2(topPlayer.gameObject.transform.position.x, topPlayer.gameObject.transform.position.y);
         currentSongTime = savedSongTimer;
         aS.time = savedSongTimer;
         aS.Play(delay);
@@ -30,7 +31,7 @@ public class SaveState : MonoBehaviour
 
     void Start()
     {
-        
+        savedCameraPosition = cameraStartPosition;
     }
 
     // Update is called once per frame
@@ -40,32 +41,55 @@ public class SaveState : MonoBehaviour
         middleCurrentPlayerPosition = middlePlayer.gameObject.transform.position;
         topCurrentPlayerPosition = topPlayer.gameObject.transform.position;
 
-        currentSongTime += Time.deltaTime *44100;
+        currentSongTime += Time.deltaTime;
         if (Input.GetKeyDown(KeyCode.O))
         {
             bottomSavedPlayerPosition = bottomCurrentPlayerPosition;
             middleSavedPlayerPosition = middleCurrentPlayerPosition;
             topSavedPlayerPosition = topCurrentPlayerPosition;
             savedSongTimer = currentSongTime;
-            savedCameraPosition = camera.transform.position;
-            savedCameraIndex = camera.GetComponent<PathFollowerScript>().index;
+            savedCameraPosition = gameMaster.transform.position;
+            savedCameraIndex = gameMaster.GetComponent<PathFollowerScript>().index;
+            pathTraveled = gameMaster.GetComponent<PathFollowerScript>().decimalOfWayThere;
         }
         if (Input.GetKeyDown(KeyCode.P))
         {
             savedSongTimer = 0;
+            savedCameraPosition = cameraStartPosition;
+            bottomSavedPlayerPosition = bottomStartPosition;
+            middleSavedPlayerPosition = middleCurrentPlayerPosition;
+            topSavedPlayerPosition = topCurrentPlayerPosition;
+            savedCameraIndex = gameMaster.GetComponent<PathFollowerScript>().index = 0;
+            pathTraveled = pathTraveledStartValue;
+            ResetScene();
+        }
+        if (Input.GetKeyDown(KeyCode.C))
+        {
+            RestartFromSave();
         }
     }
 
     public void RestartFromSave()
     {
-        currentSongTime = savedSongTimer;
+        gameMaster.GetComponent<PathFollowerScript>().index = savedCameraIndex;
+        aS.time = savedSongTimer;
         bottomPlayer.transform.position = bottomSavedPlayerPosition;
         middlePlayer.transform.position = middleSavedPlayerPosition;
         topPlayer.transform.position = topSavedPlayerPosition;
-        camera.transform.position = savedCameraPosition;
-        camera.GetComponent<PathFollowerScript>().index = savedCameraIndex;
+        gameMaster.transform.position = savedCameraPosition;
+        gameMaster.GetComponent<PathFollowerScript>().decimalOfWayThere = pathTraveled;
+        currentSongTime = savedSongTimer;
+    }
+
+    public void ResetScene()
+    {
+        gameMaster.GetComponent<PathFollowerScript>().index = savedCameraIndex;
+        gameMaster.GetComponent<PathFollowerScript>().decimalOfWayThere = pathTraveledStartValue;
         currentSongTime = savedSongTimer;
         aS.time = savedSongTimer;
-        aS.Play(delay);
+        bottomPlayer.transform.position = bottomSavedPlayerPosition;
+        middlePlayer.transform.position = middleSavedPlayerPosition;
+        topPlayer.transform.position = topSavedPlayerPosition;
+        gameMaster.transform.position = cameraStartPosition;
     }
 }
