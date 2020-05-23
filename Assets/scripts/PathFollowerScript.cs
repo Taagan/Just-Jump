@@ -8,10 +8,10 @@ public class PathFollowerScript : MonoBehaviour
 {
    public Transform pathParent;
     
-    int index;
+    public int index;
     Transform targetPoint;
     float speed = MovementPlayer.speedCopy;
-    float decimalOfWayThere;
+    public float decimalOfWayThere;
     float speedFactor;
     Rigidbody2D rb;
     // Start is called before the first frame update
