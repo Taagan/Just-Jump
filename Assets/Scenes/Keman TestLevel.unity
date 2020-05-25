@@ -11044,6 +11044,21 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3580018003473880714, guid: c35c01e64ec2c244da538cc0ec0a56bd,
+        type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3580018003473880714, guid: c35c01e64ec2c244da538cc0ec0a56bd,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3580018003473880714, guid: c35c01e64ec2c244da538cc0ec0a56bd,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 40
+      objectReference: {fileID: 0}
     - target: {fileID: 3580018004510293176, guid: c35c01e64ec2c244da538cc0ec0a56bd,
         type: 3}
       propertyPath: pauseMenuParent

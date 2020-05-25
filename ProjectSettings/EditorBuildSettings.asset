@@ -32,4 +32,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/TheRealHardLevel.unity
     guid: 7e5d02554f5082448bd1922b6150082c
+  - enabled: 1
+    path: Assets/Scenes/TutorialScene(Coco).unity
+    guid: 6242cbcc09065d14dbf2e800e92a63fd
+  - enabled: 1
+    path: Assets/Scenes/Easy castle.unity
+    guid: 17d2d1fb743068c409af3b23e5be0474
   m_configObjects: {}
