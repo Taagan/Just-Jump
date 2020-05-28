@@ -55,9 +55,13 @@ public class MiddlePlayerScript : MonoBehaviour
     { 
         if (collision.gameObject.tag == "BottomPlayer")
         {
-            //jumpCD = true;
+            jumpCD = true;
             canJump = false;
-
+        }
+        else if (collision.gameObject.tag == "Ground")
+        {
+            jumpCD = true;
+            canJump = false;
         }
         //if (collision.gameObject.transform.GetChild(2).gameObject.tag == "FriendlyHitBox")
         //{
