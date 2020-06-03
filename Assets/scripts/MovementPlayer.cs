@@ -107,21 +107,10 @@ public class MovementPlayer : MonoBehaviour
     public void MiddleJump()
     {
         if (playerMiddle.GetComponent<MiddlePlayerScript>().canJump == true)
-        {
-            //if (playerMiddle.GetComponent<MiddlePlayerScript>().touchingTop)
-            //{
-            //    Jump(rbTop);
-            //    Jump(rbMiddle);
-            //    GUIscript.jumpCounterMiddle++;
-            //    playerMiddle.GetComponent<MiddlePlayerScript>().canJump = false;
-            //}
-            
-            
+        {           
             Jump(rbMiddle);
             GUIscript.jumpCounterMiddle++;
-            playerMiddle.GetComponent<MiddlePlayerScript>().canJump = false;
-
-            
+            playerMiddle.GetComponent<MiddlePlayerScript>().canJump = false;          
         }
         else if (Input.GetKeyDown(KeyCode.S) && !playerMiddle.GetComponent<MiddlePlayerScript>().canJump)
         {

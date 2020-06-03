@@ -24,10 +24,6 @@ public class TopPlayerScript : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        //if (collision.gameObject.tag == "MiddlePlayer")
-        //{
-        //    gameObject.GetComponent<Rigidbody2D>().velocity = collision.gameObject.GetComponent<Rigidbody2D>().velocity;
-        //}
         if (collision.gameObject.tag == "JumpRefresh")
         {
             canJump = true;
@@ -69,6 +65,7 @@ public class TopPlayerScript : MonoBehaviour
     }
     public void Animation()
     {
+        //aktivera om du vill ha animationer
         //gameObject.GetComponentInChildren<AnimationScript>().PlayAnimation();
     }
 

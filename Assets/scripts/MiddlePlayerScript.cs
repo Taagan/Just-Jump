@@ -24,18 +24,6 @@ public class MiddlePlayerScript : MonoBehaviour
         {
             canJump = true;
         }
-        //if (collision.gameObject.tag == "BottomPlayer")
-        //{
-        //    gameObject.GetComponent<Rigidbody2D>().velocity = collision.gameObject.GetComponent<Rigidbody2D>().velocity;
-        //}
-        //if (collision.gameObject.transform.GetChild(2).gameObject.tag == "BottomPlayerFriendHitBox" && gameObject.transform.GetChild(2).gameObject.tag == "FriendlyHitBox")
-        //{
-        //    touchingBottom = true;
-        //}
-        //if (collision.gameObject.transform.GetChild(2).gameObject.tag == "FriendlyHitBox")
-        //{
-        //    touchingTop = true;
-        //}
     }
     private void OnCollisionStay2D(Collision2D collision)
     {
@@ -63,14 +51,6 @@ public class MiddlePlayerScript : MonoBehaviour
             jumpCD = true;
             canJump = false;
         }
-        //if (collision.gameObject.transform.GetChild(2).gameObject.tag == "FriendlyHitBox")
-        //{
-        //    touchingTop = false;
-        //}
-        //if (collision.gameObject.transform.GetChild(2).gameObject.tag == "BottomPlayerFriendHitBox")
-        //{
-        //    touchingBottom = false;
-        //}
     }
 
     private void Update()
@@ -85,23 +65,9 @@ public class MiddlePlayerScript : MonoBehaviour
             }
         }
     }
-
-
-    private void ShareVelocity()
-    {
-        //Tried to make A jump when it collided with S midair
-        //if (!canJump && touchingTop && velocityShare)
-        //{
-        //    velocityShare = false;
-        //    Debug.Log("start");
-        //    GetComponent<TopPlayerScript>().CanJump = true;
-        //    GetComponent<MovementPlayer>().TopJump();
-        //    Debug.Log("finish");
-
-        //}
-    }
     public void Animation()
     {
+        //Aktivera om du vill ha animations
         //gameObject.GetComponentInChildren<AnimationScript>().PlayAnimation();
     }
 

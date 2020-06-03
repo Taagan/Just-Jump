@@ -57,13 +57,6 @@ public class BottomPlayerScript : MonoBehaviour
             }
         }
     }
-
-    public void CheckMiddlePlayer()
-    {
-
-    }
-
-
     public void Animation()
     {
         gameObject.GetComponentInChildren<AnimationScript>().PlayAnimation();

@@ -54,26 +54,11 @@ public class PathFollowerScript : MonoBehaviour
             Gizmos.DrawLine(from, to);
         }
     }
-
-
-    ////Update is called once per frame
-    //    void FixedUpdate()
-    //    {
-    //        //transform.position = Vector3.MoveTowards(transform.position, targetPoint.position, speed * Time.deltaTime);
-
-    //        //if (Vector2.Distance(transform.position, targetPoint.position) < 0.1f)
-    //        //{
-    //        //        index++;
-    //        //        //index %= pathParent.childCount;
-    //        //        targetPoint = pathParent.GetChild(index);
-    //        //}
-    //    }
-
-       public void SetNextPath(Vector2 currentLocation, Vector2 TargetLocation)
-       {
+    public void SetNextPath(Vector2 currentLocation, Vector2 TargetLocation)
+    {
         float distance = (currentLocation - TargetLocation).magnitude;
         speedFactor = (1.0f / distance);
-       }
+    }
 }
 
 
