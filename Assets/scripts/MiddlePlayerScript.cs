@@ -55,7 +55,6 @@ public class MiddlePlayerScript : MonoBehaviour
 
     private void Update()
     {
-        //ShareVelocity();
         if (jumpCD)
         {
             timer++;

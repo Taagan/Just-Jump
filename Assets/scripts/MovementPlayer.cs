@@ -181,7 +181,6 @@ public class MovementPlayer : MonoBehaviour
             if (playerMiddle.GetComponent<MiddlePlayerScript>().canJump)
             {
                 MiddleJump();
-                //TopJump();
                 middleBufferActive = false;
                 bufferTimerS = 0;
                 Debug.Log("a");

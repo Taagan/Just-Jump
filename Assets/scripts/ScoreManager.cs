@@ -4,7 +4,5 @@ using UnityEngine;
 
 public class ScoreManager : MonoBehaviour
 {
-    // Start is called before the first frame update
     public int collectedBonuses;
-
 }

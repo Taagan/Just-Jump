@@ -48,6 +48,7 @@ public class BottomPlayerScript : MonoBehaviour
 
     private void Update()
     {
+        //JumpCD för att unvika dubbelhopp
         if (jumpCD)
         {
             timer++;

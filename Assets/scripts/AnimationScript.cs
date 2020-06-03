@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class AnimationScript : MonoBehaviour
 {
-    public Animator anir;
+    public Animator anir; // Animations objektet
     int jumpCalled = Animator.StringToHash("JumpCalled");
 
 

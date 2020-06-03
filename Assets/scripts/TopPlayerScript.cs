@@ -67,7 +67,5 @@ public class TopPlayerScript : MonoBehaviour
     {
         //aktivera om du vill ha animationer
         //gameObject.GetComponentInChildren<AnimationScript>().PlayAnimation();
-    }
-
-   
+    } 
 }
