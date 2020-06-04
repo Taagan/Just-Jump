@@ -5322,6 +5322,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5592d690a73353145b3d34dca430a588, type: 3}
+--- !u!1 &1487864185 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 726740804254057777, guid: 5592d690a73353145b3d34dca430a588,
+    type: 3}
+  m_PrefabInstance: {fileID: 1487864184}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1512795417
 GameObject:
   m_ObjectHideFlags: 0
@@ -23716,6 +23722,66 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c35c01e64ec2c244da538cc0ec0a56bd, type: 3}
+--- !u!114 &1741839525 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3580018005415545388, guid: c35c01e64ec2c244da538cc0ec0a56bd,
+    type: 3}
+  m_PrefabInstance: {fileID: 1741839524}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1741839526 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3580018003473880709, guid: c35c01e64ec2c244da538cc0ec0a56bd,
+    type: 3}
+  m_PrefabInstance: {fileID: 1741839524}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1741839527 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3580018003752085226, guid: c35c01e64ec2c244da538cc0ec0a56bd,
+    type: 3}
+  m_PrefabInstance: {fileID: 1741839524}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1741839528 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3580018003457526823, guid: c35c01e64ec2c244da538cc0ec0a56bd,
+    type: 3}
+  m_PrefabInstance: {fileID: 1741839524}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1741839529 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3580018003837725906, guid: c35c01e64ec2c244da538cc0ec0a56bd,
+    type: 3}
+  m_PrefabInstance: {fileID: 1741839524}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1808781662
 GameObject:
   m_ObjectHideFlags: 0
@@ -29556,6 +29622,36 @@ PrefabInstance:
       propertyPath: speed
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 3150928672690863738, guid: 1ce0b3d0af2750547a2cfc0d7fdcfaf1,
+        type: 3}
+      propertyPath: blackBackgroundProgressBar
+      value: 
+      objectReference: {fileID: 1741839525}
+    - target: {fileID: 3150928672690863738, guid: 1ce0b3d0af2750547a2cfc0d7fdcfaf1,
+        type: 3}
+      propertyPath: angledProgressBar
+      value: 
+      objectReference: {fileID: 1741839526}
+    - target: {fileID: 3150928672690863738, guid: 1ce0b3d0af2750547a2cfc0d7fdcfaf1,
+        type: 3}
+      propertyPath: percentageText
+      value: 
+      objectReference: {fileID: 1741839527}
+    - target: {fileID: 3150928672690863738, guid: 1ce0b3d0af2750547a2cfc0d7fdcfaf1,
+        type: 3}
+      propertyPath: songTitle
+      value: 
+      objectReference: {fileID: 1741839528}
+    - target: {fileID: 3150928672690863738, guid: 1ce0b3d0af2750547a2cfc0d7fdcfaf1,
+        type: 3}
+      propertyPath: author
+      value: 
+      objectReference: {fileID: 1741839529}
+    - target: {fileID: 3150928672690863738, guid: 1ce0b3d0af2750547a2cfc0d7fdcfaf1,
+        type: 3}
+      propertyPath: endOfLevelMarker
+      value: 
+      objectReference: {fileID: 1487864185}
     - target: {fileID: 3150928672690863739, guid: 1ce0b3d0af2750547a2cfc0d7fdcfaf1,
         type: 3}
       propertyPath: m_Name
