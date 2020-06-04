@@ -78,17 +78,19 @@ public class MovementPlayer : MonoBehaviour
                 break;
         }
     }
+
     public void debugMovement()
     {
         bottomSprite.transform.position = new Vector2(rbGameMaster.position.x, playerBottom.transform.position.y);
         middleSprite.transform.position = new Vector2(rbGameMaster.position.x, playerMiddle.transform.position.y);
         topSprite.transform.position = new Vector2(rbGameMaster.position.x, playerTop.transform.position.y);
-
     }
+
     private void Jump(Rigidbody2D rb)
     {
         rb.velocity = new Vector2(speed, jumpForce);    //speed blir horizentala vikeln       
     }
+
     public void FullJump()
     {
         if (playerBottom.GetComponent<BottomPlayerScript>().canJump)
