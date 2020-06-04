@@ -5215,6 +5215,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2055514190995226456, guid: e03178b91620b0247a0748c1d72d1d2d,
+        type: 3}
+      propertyPath: camera
+      value: 
+      objectReference: {fileID: 1945444042}
     - target: {fileID: 6433990749427697191, guid: e03178b91620b0247a0748c1d72d1d2d,
         type: 3}
       propertyPath: m_Name
@@ -5401,10 +5406,25 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3050328670804381747, guid: f45c3eb814b57114787d68fe9d309621,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 135.9
+      objectReference: {fileID: 0}
     - target: {fileID: 3991268996841670517, guid: f45c3eb814b57114787d68fe9d309621,
         type: 3}
       propertyPath: m_Name
       value: pathParent
+      objectReference: {fileID: 0}
+    - target: {fileID: 4095302824840720361, guid: f45c3eb814b57114787d68fe9d309621,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 135.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 4497694951860168652, guid: f45c3eb814b57114787d68fe9d309621,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 135.9
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f45c3eb814b57114787d68fe9d309621, type: 3}
@@ -5456,6 +5476,11 @@ PrefabInstance:
       propertyPath: topPlayer
       value: 
       objectReference: {fileID: 1154646262}
+    - target: {fileID: 3150928672690863717, guid: 1ce0b3d0af2750547a2cfc0d7fdcfaf1,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3150928672690863718, guid: 1ce0b3d0af2750547a2cfc0d7fdcfaf1,
         type: 3}
       propertyPath: pathParent
@@ -5669,6 +5694,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5592d690a73353145b3d34dca430a588, type: 3}
+--- !u!20 &1945444042 stripped
+Camera:
+  m_CorrespondingSourceObject: {fileID: 3150928671615814298, guid: 1ce0b3d0af2750547a2cfc0d7fdcfaf1,
+    type: 3}
+  m_PrefabInstance: {fileID: 1798347807}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2070001737
 PrefabInstance:
   m_ObjectHideFlags: 0

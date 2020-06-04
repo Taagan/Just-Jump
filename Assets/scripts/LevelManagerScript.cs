@@ -44,9 +44,9 @@ public class LevelManagerScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        float currentSpeed = GetComponent<MovementPlayer>().speed;
         if (!inLevelSelect)
         {
+            float currentSpeed = GetComponent<MovementPlayer>().speed;
             float distCovered = (Time.time - startTime) * currentSpeed;
             float fractionOfJourney = distCovered / distanceToTravel;
             float t = gameObject.transform.position.x / endOfLevelMarker.transform.position.x;
