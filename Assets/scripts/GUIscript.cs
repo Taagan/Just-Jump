@@ -60,7 +60,7 @@ public class GUIscript : MonoBehaviour
             case WinOrLose.lost:
 
                 Time.timeScale = 0;
-                timer.GetComponent<Timer>().timer = 0;
+                //timer.GetComponent<Timer>().timer = 0;
                 LoseMenuParent.SetActive(true);
                 audioSource.Pause();
 
